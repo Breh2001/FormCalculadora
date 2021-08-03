@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brenda\\source\\repos\\MeuPrimeiroProjeto\\MeuPrimeiroProjeto\\MeuPrimeiroProjeto.vbproj",
+      "projectUniqueName": "C:\\Users\\Brenda\\Documents\\Projetos_GitHub\\FormCalculadora\\MeuPrimeiroProjeto\\MeuPrimeiroProjeto.vbproj",
       "projectName": "MeuPrimeiroProjeto",
-      "projectPath": "C:\\Users\\Brenda\\source\\repos\\MeuPrimeiroProjeto\\MeuPrimeiroProjeto\\MeuPrimeiroProjeto.vbproj",
+      "projectPath": "C:\\Users\\Brenda\\Documents\\Projetos_GitHub\\FormCalculadora\\MeuPrimeiroProjeto\\MeuPrimeiroProjeto.vbproj",
       "packagesPath": "C:\\Users\\Brenda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brenda\\source\\repos\\MeuPrimeiroProjeto\\MeuPrimeiroProjeto\\obj\\",
+      "outputPath": "C:\\Users\\Brenda\\Documents\\Projetos_GitHub\\FormCalculadora\\MeuPrimeiroProjeto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Brenda\\AppData\\Roaming\\NuGet\\NuGet.Config",
