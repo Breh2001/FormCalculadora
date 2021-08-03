@@ -1,0 +1,15 @@
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\bin\Debug\netcoreapp3.1\MeuPrimeiroProjeto.exe
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\bin\Debug\netcoreapp3.1\MeuPrimeiroProjeto.deps.json
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\bin\Debug\netcoreapp3.1\MeuPrimeiroProjeto.runtimeconfig.json
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\bin\Debug\netcoreapp3.1\MeuPrimeiroProjeto.runtimeconfig.dev.json
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\bin\Debug\netcoreapp3.1\MeuPrimeiroProjeto.dll
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\bin\Debug\netcoreapp3.1\MeuPrimeiroProjeto.pdb
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.AssemblyInfoInputs.cache
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.AssemblyInfo.vb
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.vbproj.CoreCompileInputs.cache
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.dll
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.pdb
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.genruntimeconfig.cache
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.vbproj.AssemblyReference.cache
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.Form_calculadora.resources
+C:\Users\Brenda\source\repos\MeuPrimeiroProjeto\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.vbproj.GenerateResource.cache
