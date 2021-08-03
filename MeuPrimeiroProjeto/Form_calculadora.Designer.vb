@@ -22,88 +22,262 @@ Partial Class Form_calculadora
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btnCalcular = New System.Windows.Forms.Button()
+        Me.btnMais = New System.Windows.Forms.Button()
+        Me.btnMenos = New System.Windows.Forms.Button()
+        Me.btnDividir = New System.Windows.Forms.Button()
+        Me.btnMultiplicar = New System.Windows.Forms.Button()
+        Me.txtDisplay = New System.Windows.Forms.TextBox()
+        Me.btn1 = New System.Windows.Forms.Button()
+        Me.btn2 = New System.Windows.Forms.Button()
+        Me.btn3 = New System.Windows.Forms.Button()
+        Me.btn6 = New System.Windows.Forms.Button()
+        Me.btn5 = New System.Windows.Forms.Button()
+        Me.btn4 = New System.Windows.Forms.Button()
+        Me.btn9 = New System.Windows.Forms.Button()
+        Me.btn8 = New System.Windows.Forms.Button()
+        Me.btn7 = New System.Windows.Forms.Button()
+        Me.btn0 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnCalcular
         '
-        Me.Button1.Location = New System.Drawing.Point(85, 265)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(77, 33)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Calcular"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCalcular.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_sinal_de_igual_2_64
+        Me.btnCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCalcular.FlatAppearance.BorderSize = 0
+        Me.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalcular.Location = New System.Drawing.Point(199, 269)
+        Me.btnCalcular.Name = "btnCalcular"
+        Me.btnCalcular.Size = New System.Drawing.Size(47, 41)
+        Me.btnCalcular.TabIndex = 0
+        Me.btnCalcular.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnMais
         '
-        Me.Button2.Location = New System.Drawing.Point(122, 107)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(40, 29)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "+"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnMais.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_soma_64
+        Me.btnMais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMais.FlatAppearance.BorderSize = 0
+        Me.btnMais.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMais.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnMais.Location = New System.Drawing.Point(202, 223)
+        Me.btnMais.Name = "btnMais"
+        Me.btnMais.Size = New System.Drawing.Size(40, 40)
+        Me.btnMais.TabIndex = 1
+        Me.btnMais.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnMenos
         '
-        Me.Button3.Location = New System.Drawing.Point(122, 158)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(40, 29)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "-"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnMenos.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_subtração_64
+        Me.btnMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMenos.FlatAppearance.BorderSize = 0
+        Me.btnMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenos.Location = New System.Drawing.Point(202, 177)
+        Me.btnMenos.Name = "btnMenos"
+        Me.btnMenos.Size = New System.Drawing.Size(40, 40)
+        Me.btnMenos.TabIndex = 2
+        Me.btnMenos.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnDividir
         '
-        Me.Button4.Location = New System.Drawing.Point(188, 107)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(40, 29)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "/"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnDividir.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_dividisão_64
+        Me.btnDividir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnDividir.FlatAppearance.BorderSize = 0
+        Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDividir.Location = New System.Drawing.Point(202, 85)
+        Me.btnDividir.Name = "btnDividir"
+        Me.btnDividir.Size = New System.Drawing.Size(40, 40)
+        Me.btnDividir.TabIndex = 3
+        Me.btnDividir.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btnMultiplicar
         '
-        Me.Button5.Location = New System.Drawing.Point(188, 158)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(40, 29)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "*"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnMultiplicar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_multiplicação_64
+        Me.btnMultiplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMultiplicar.FlatAppearance.BorderSize = 0
+        Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMultiplicar.Location = New System.Drawing.Point(202, 131)
+        Me.btnMultiplicar.Name = "btnMultiplicar"
+        Me.btnMultiplicar.Size = New System.Drawing.Size(40, 40)
+        Me.btnMultiplicar.TabIndex = 4
+        Me.btnMultiplicar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtDisplay
         '
-        Me.TextBox1.Location = New System.Drawing.Point(26, 25)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(202, 23)
-        Me.TextBox1.TabIndex = 5
+        Me.txtDisplay.BackColor = System.Drawing.Color.GhostWhite
+        Me.txtDisplay.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtDisplay.Font = New System.Drawing.Font("MS UI Gothic", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtDisplay.Location = New System.Drawing.Point(0, 0)
+        Me.txtDisplay.Multiline = True
+        Me.txtDisplay.Name = "txtDisplay"
+        Me.txtDisplay.Size = New System.Drawing.Size(260, 79)
+        Me.txtDisplay.TabIndex = 5
+        '
+        'btn1
+        '
+        Me.btn1.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64
+        Me.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn1.FlatAppearance.BorderSize = 0
+        Me.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn1.Location = New System.Drawing.Point(9, 85)
+        Me.btn1.Name = "btn1"
+        Me.btn1.Size = New System.Drawing.Size(58, 58)
+        Me.btn1.TabIndex = 6
+        Me.btn1.UseVisualStyleBackColor = True
+        '
+        'btn2
+        '
+        Me.btn2.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__1_
+        Me.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn2.FlatAppearance.BorderSize = 0
+        Me.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn2.Location = New System.Drawing.Point(74, 85)
+        Me.btn2.Name = "btn2"
+        Me.btn2.Size = New System.Drawing.Size(58, 58)
+        Me.btn2.TabIndex = 7
+        Me.btn2.UseVisualStyleBackColor = True
+        '
+        'btn3
+        '
+        Me.btn3.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__2_
+        Me.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn3.FlatAppearance.BorderSize = 0
+        Me.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn3.Location = New System.Drawing.Point(137, 85)
+        Me.btn3.Name = "btn3"
+        Me.btn3.Size = New System.Drawing.Size(58, 58)
+        Me.btn3.TabIndex = 8
+        Me.btn3.UseVisualStyleBackColor = True
+        '
+        'btn6
+        '
+        Me.btn6.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__5_
+        Me.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn6.FlatAppearance.BorderSize = 0
+        Me.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn6.Location = New System.Drawing.Point(137, 138)
+        Me.btn6.Name = "btn6"
+        Me.btn6.Size = New System.Drawing.Size(58, 58)
+        Me.btn6.TabIndex = 11
+        Me.btn6.UseVisualStyleBackColor = True
+        '
+        'btn5
+        '
+        Me.btn5.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__4_
+        Me.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn5.FlatAppearance.BorderSize = 0
+        Me.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn5.Location = New System.Drawing.Point(74, 138)
+        Me.btn5.Name = "btn5"
+        Me.btn5.Size = New System.Drawing.Size(58, 58)
+        Me.btn5.TabIndex = 10
+        Me.btn5.UseVisualStyleBackColor = True
+        '
+        'btn4
+        '
+        Me.btn4.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__3_
+        Me.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn4.FlatAppearance.BorderSize = 0
+        Me.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn4.Location = New System.Drawing.Point(9, 138)
+        Me.btn4.Name = "btn4"
+        Me.btn4.Size = New System.Drawing.Size(58, 58)
+        Me.btn4.TabIndex = 9
+        Me.btn4.UseVisualStyleBackColor = True
+        '
+        'btn9
+        '
+        Me.btn9.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__8_
+        Me.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn9.FlatAppearance.BorderSize = 0
+        Me.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn9.Location = New System.Drawing.Point(137, 191)
+        Me.btn9.Name = "btn9"
+        Me.btn9.Size = New System.Drawing.Size(58, 58)
+        Me.btn9.TabIndex = 14
+        Me.btn9.UseVisualStyleBackColor = True
+        '
+        'btn8
+        '
+        Me.btn8.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__7_
+        Me.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn8.FlatAppearance.BorderSize = 0
+        Me.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn8.Location = New System.Drawing.Point(74, 191)
+        Me.btn8.Name = "btn8"
+        Me.btn8.Size = New System.Drawing.Size(58, 58)
+        Me.btn8.TabIndex = 13
+        Me.btn8.UseVisualStyleBackColor = True
+        '
+        'btn7
+        '
+        Me.btn7.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__6_
+        Me.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn7.FlatAppearance.BorderSize = 0
+        Me.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn7.Location = New System.Drawing.Point(9, 191)
+        Me.btn7.Name = "btn7"
+        Me.btn7.Size = New System.Drawing.Size(58, 58)
+        Me.btn7.TabIndex = 12
+        Me.btn7.UseVisualStyleBackColor = True
+        '
+        'btn0
+        '
+        Me.btn0.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__9_
+        Me.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn0.FlatAppearance.BorderSize = 0
+        Me.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn0.Location = New System.Drawing.Point(74, 244)
+        Me.btn0.Name = "btn0"
+        Me.btn0.Size = New System.Drawing.Size(58, 58)
+        Me.btn0.TabIndex = 15
+        Me.btn0.UseVisualStyleBackColor = True
         '
         'Form_calculadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(251, 330)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.BackColor = System.Drawing.Color.LavenderBlush
+        Me.ClientSize = New System.Drawing.Size(260, 319)
+        Me.Controls.Add(Me.btn0)
+        Me.Controls.Add(Me.btn9)
+        Me.Controls.Add(Me.btn8)
+        Me.Controls.Add(Me.btn7)
+        Me.Controls.Add(Me.btn6)
+        Me.Controls.Add(Me.btn5)
+        Me.Controls.Add(Me.btn4)
+        Me.Controls.Add(Me.btn3)
+        Me.Controls.Add(Me.btn2)
+        Me.Controls.Add(Me.btn1)
+        Me.Controls.Add(Me.txtDisplay)
+        Me.Controls.Add(Me.btnMultiplicar)
+        Me.Controls.Add(Me.btnDividir)
+        Me.Controls.Add(Me.btnMenos)
+        Me.Controls.Add(Me.btnMais)
+        Me.Controls.Add(Me.btnCalcular)
+        Me.MaximumSize = New System.Drawing.Size(276, 358)
+        Me.MinimumSize = New System.Drawing.Size(276, 358)
         Me.Name = "Form_calculadora"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form_calculadora"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents btnCalcular As Button
+    Friend WithEvents btnMais As Button
+    Friend WithEvents btnMenos As Button
+    Friend WithEvents btnDividir As Button
+    Friend WithEvents btnMultiplicar As Button
+    Friend WithEvents txtDisplay As TextBox
+    Friend WithEvents btn1 As Button
+    Friend WithEvents btn2 As Button
+    Friend WithEvents btn3 As Button
+    Friend WithEvents btn6 As Button
+    Friend WithEvents btn5 As Button
+    Friend WithEvents btn4 As Button
+    Friend WithEvents btn9 As Button
+    Friend WithEvents btn8 As Button
+    Friend WithEvents btn7 As Button
+    Friend WithEvents btn0 As Button
 End Class
