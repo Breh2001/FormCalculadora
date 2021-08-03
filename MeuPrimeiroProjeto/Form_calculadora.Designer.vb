@@ -27,11 +27,11 @@ Partial Class Form_calculadora
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(85, 285)
+        Me.Button1.Location = New System.Drawing.Point(85, 265)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(77, 33)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Calcular"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Form_calculadora
