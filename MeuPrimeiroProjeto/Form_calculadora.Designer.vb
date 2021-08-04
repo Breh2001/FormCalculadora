@@ -40,6 +40,7 @@ Partial Class Form_calculadora
         Me.btn0 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblExpressao = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -253,12 +254,22 @@ Partial Class Form_calculadora
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.lblExpressao)
         Me.Panel1.Controls.Add(Me.txtDisplay)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(260, 90)
         Me.Panel1.TabIndex = 17
+        '
+        'lblExpressao
+        '
+        Me.lblExpressao.AutoSize = True
+        Me.lblExpressao.Location = New System.Drawing.Point(209, 18)
+        Me.lblExpressao.Name = "lblExpressao"
+        Me.lblExpressao.Size = New System.Drawing.Size(41, 15)
+        Me.lblExpressao.TabIndex = 6
+        Me.lblExpressao.Text = "Label1"
         '
         'Form_calculadora
         '
@@ -312,4 +323,5 @@ Partial Class Form_calculadora
     Friend WithEvents btn0 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblExpressao As Label
 End Class

@@ -8,18 +8,23 @@ Public Class Form_calculadora
 
     'Cint () -> converter para inteiro'
 
+    Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click, btn2.Click, btn3.Click, btn4.Click, btn5.Click, btn6.Click, btn7.Click, btn8.Click, btn9.Click, btn0.Click
+
+        'pegar o nome do botao pressionado
+        Dim nomeBotaoClicado = sender.name
+        'remover o btn do nome do botao para conseguir o numero pressionado
+        Dim numeroBotao = nomeBotaoClicado.ToString.Replace("btn", "")
+        'chamar a função de adicionar numero no display passando por parametro o numero pressionado
+        AdicionarNumDisplay(numeroBotao)
+
+    End Sub
+
     Private Sub AdicionarNumDisplay(numero As String)
 
         If txtDisplay.Text.Length < 12 Then
             txtDisplay.Text += numero
         End If
 
-    End Sub
-
-    Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click, btn2.Click, btn3.Click, btn4.Click, btn5.Click, btn6.Click, btn7.Click, btn8.Click, btn9.Click, btn0.Click
-        Dim nomeBotaoClicado = sender.name
-        Dim numeroBotao = nomeBotaoClicado.ToString.Replace("btn", "")
-        AdicionarNumDisplay(numeroBotao)
     End Sub
 
 #Region "Set BackgroundImage botões"
@@ -119,31 +124,42 @@ Public Class Form_calculadora
     End Sub
 
     Private Sub btnMais_Click(sender As Object, e As EventArgs) Handles btnMais.Click
+
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "+"
+        lblExpressao.Text = valor1.ToString + operador
+
     End Sub
 
     Private Sub btnMenos_Click(sender As Object, e As EventArgs) Handles btnMenos.Click
+
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "-"
+
     End Sub
 
     Private Sub btnMultiplicar_Click(sender As Object, e As EventArgs) Handles btnMultiplicar.Click
+
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "*"
+
     End Sub
 
     Private Sub btnDividir_Click(sender As Object, e As EventArgs) Handles btnDividir.Click
+
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "/"
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         txtDisplay.Text = ""
+
     End Sub
 
     Private Sub txtDisplay_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtDisplay.KeyPress
