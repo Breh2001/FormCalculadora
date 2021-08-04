@@ -6,7 +6,7 @@ Public Class Form_calculadora
     Dim valor2 As Long
     Dim operador As String
 
-    'Cint () -> converter para inteiro'
+    'Cint () -> converter para inteiro
 
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click, btn2.Click, btn3.Click, btn4.Click, btn5.Click, btn6.Click, btn7.Click, btn8.Click, btn9.Click, btn0.Click
 
@@ -30,65 +30,65 @@ Public Class Form_calculadora
 #Region "Set BackgroundImage botões"
     '-----------------------------------------btnMais-----------------------------------------'
     Private Sub btnMais_MouseHover(sender As Object, e As EventArgs) Handles btnMais.MouseHover
-        btnMais.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-soma-64-branco.png")
+        btnMais.BackgroundImage = My.Resources.icons8_soma_64_branco
     End Sub
 
     Private Sub btnMais_MouseLeave(sender As Object, e As EventArgs) Handles btnMais.MouseLeave
-        btnMais.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-soma-64.png")
+        btnMais.BackgroundImage = My.Resources.icons8_soma_64
     End Sub
 
     Private Sub btnMais_MouseDown(sender As Object, e As MouseEventArgs) Handles btnMais.MouseDown
-        btnMais.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-soma-64-dark.png")
+        btnMais.BackgroundImage = My.Resources.icons8_soma_64_dark
     End Sub
 
     Private Sub btnMais_MouseUp(sender As Object, e As MouseEventArgs) Handles btnMais.MouseUp
-        btnMais.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-soma-64-branco.png")
+        btnMais.BackgroundImage = My.Resources.icons8_soma_64_branco
     End Sub
 
     '-----------------------------------------btnMenos-----------------------------------------'
     Private Sub btnMenos_MouseHover(sender As Object, e As EventArgs) Handles btnMenos.MouseHover
-        btnMenos.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-subtração-64-branco.png")
+        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64_branco
     End Sub
 
     Private Sub btnMenos_MouseLeave(sender As Object, e As EventArgs) Handles btnMenos.MouseLeave
-        btnMenos.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-subtração-64.png")
+        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64
     End Sub
 
     Private Sub btnMenos_MouseDown(sender As Object, e As MouseEventArgs) Handles btnMenos.MouseDown
-        btnMenos.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-subtração-64-dark.png")
+        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64_dark
     End Sub
 
     Private Sub btnMenos_MouseUp(sender As Object, e As MouseEventArgs) Handles btnMenos.MouseUp
-        btnMenos.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-subtração-64-branco.png")
+        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64_branco
     End Sub
 
     '---------------------------------------btnMultiplicar---------------------------------------'
     Private Sub btnMultiplicar_MouseHover(sender As Object, e As EventArgs) Handles btnMultiplicar.MouseHover
-        btnMultiplicar.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-multiplicação-64-branco.png")
+        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64_branco
     End Sub
 
     Private Sub btnMultiplicar_MouseLeave(sender As Object, e As EventArgs) Handles btnMultiplicar.MouseLeave
-        btnMultiplicar.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-multiplicação-64.png")
+        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64
     End Sub
 
     Private Sub btnMultiplicar_MouseDown(sender As Object, e As MouseEventArgs) Handles btnMultiplicar.MouseDown
-        btnMultiplicar.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-multiplicação-64-dark.png")
+        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64_dark
     End Sub
 
     Private Sub btnMultiplicar_MouseUp(sender As Object, e As MouseEventArgs) Handles btnMultiplicar.MouseUp
-        btnMultiplicar.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-multiplicação-64-branco.png")
+        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64_branco
     End Sub
     '---------------------------------------btnDividir---------------------------------------'
     Private Sub btnDividir_MouseHover(sender As Object, e As EventArgs) Handles btnDividir.MouseHover
-        btnDividir.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-dividisão-64-branco.png")
+        btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64_branco
     End Sub
 
     Private Sub btnDividir_MouseLeave(sender As Object, e As EventArgs) Handles btnDividir.MouseLeave
-        btnDividir.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-dividisão-64.png")
+        btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64
     End Sub
 
     Private Sub btnDividir_MouseDown(sender As Object, e As MouseEventArgs) Handles btnDividir.MouseDown
-        btnDividir.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-dividisão-64-dark.png")
+        btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64_dark
     End Sub
 
     Private Sub btnDividir_MouseUp(sender As Object, e As MouseEventArgs) Handles btnDividir.MouseUp
@@ -103,21 +103,32 @@ Public Class Form_calculadora
 
         Dim calculaSoma As Long
 
-        If operador = "+" Then
-            calculaSoma = valor1 + valor2
-        End If
+        Select Case operador
+            Case "+"
+                calculaSoma = valor1 + valor2
+            Case "-"
+                calculaSoma = valor1 - valor2
+            Case "*"
+                calculaSoma = valor1 * valor2
+            Case "/"
+                calculaSoma = valor1 / valor2
+        End Select
 
-        If operador = "-" Then
-            calculaSoma = valor1 - valor2
-        End If
+        'If operador = "+" Then
+        '    calculaSoma = valor1 + valor2
+        'End If
 
-        If operador = "*" Then
-            calculaSoma = valor1 * valor2
-        End If
+        'If operador = "-" Then
+        '    calculaSoma = valor1 - valor2
+        'End If
 
-        If operador = "/" Then
-            calculaSoma = valor1 / valor2
-        End If
+        'If operador = "*" Then
+        '    calculaSoma = valor1 * valor2
+        'End If
+
+        'If operador = "/" Then
+        '    calculaSoma = valor1 / valor2
+        'End If
 
         txtDisplay.Text = calculaSoma
 
@@ -128,7 +139,7 @@ Public Class Form_calculadora
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "+"
-        lblExpressao.Text = valor1.ToString + operador
+        'lblExpressao.Text = valor1.ToString + operador
 
     End Sub
 
@@ -170,18 +181,18 @@ Public Class Form_calculadora
 
     End Sub
 
-    '--------------colocar função ao sinal de Mais---------------'
+    '--------------colocar função ao sinal de Mais---------------
 
-    'armazenar o valor já inserido no txtDisplay'
+    'armazenar o valor já inserido no txtDisplay
 
-    'adicionar o + no txtDisplay'
+    'adicionar o + no txtDisplay
 
-    'armazenar o segundo valor inserido no txtDisplay'
+    'armazenar o segundo valor inserido no txtDisplay
 
-    'somar os dois valores'
+    'somar os dois valores
 
-    'apagar o texto do txtDisplay'
+    'apagar o texto do txtDisplay
 
-    'colocar o valor calculado no txtDisplay'
+    'colocar o valor calculado no txtDisplay
 
 End Class
