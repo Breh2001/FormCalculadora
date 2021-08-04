@@ -38,15 +38,16 @@ Partial Class Form_calculadora
         Me.btn8 = New System.Windows.Forms.Button()
         Me.btn7 = New System.Windows.Forms.Button()
         Me.btn0 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnCalcular
         '
-        Me.btnCalcular.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_sinal_de_igual_2_64
+        Me.btnCalcular.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_símbolo_igual_64
         Me.btnCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCalcular.FlatAppearance.BorderSize = 0
         Me.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCalcular.Location = New System.Drawing.Point(199, 269)
+        Me.btnCalcular.Location = New System.Drawing.Point(203, 280)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(47, 41)
         Me.btnCalcular.TabIndex = 0
@@ -54,16 +55,17 @@ Partial Class Form_calculadora
         '
         'btnMais
         '
+        Me.btnMais.BackColor = System.Drawing.Color.Transparent
         Me.btnMais.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_soma_64
         Me.btnMais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnMais.FlatAppearance.BorderSize = 0
         Me.btnMais.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMais.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnMais.Location = New System.Drawing.Point(202, 223)
+        Me.btnMais.Location = New System.Drawing.Point(206, 242)
         Me.btnMais.Name = "btnMais"
         Me.btnMais.Size = New System.Drawing.Size(40, 40)
         Me.btnMais.TabIndex = 1
-        Me.btnMais.UseVisualStyleBackColor = True
+        Me.btnMais.UseVisualStyleBackColor = False
         '
         'btnMenos
         '
@@ -71,7 +73,7 @@ Partial Class Form_calculadora
         Me.btnMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnMenos.FlatAppearance.BorderSize = 0
         Me.btnMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMenos.Location = New System.Drawing.Point(202, 177)
+        Me.btnMenos.Location = New System.Drawing.Point(206, 204)
         Me.btnMenos.Name = "btnMenos"
         Me.btnMenos.Size = New System.Drawing.Size(40, 40)
         Me.btnMenos.TabIndex = 2
@@ -83,7 +85,7 @@ Partial Class Form_calculadora
         Me.btnDividir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDividir.FlatAppearance.BorderSize = 0
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDividir.Location = New System.Drawing.Point(202, 85)
+        Me.btnDividir.Location = New System.Drawing.Point(206, 130)
         Me.btnDividir.Name = "btnDividir"
         Me.btnDividir.Size = New System.Drawing.Size(40, 40)
         Me.btnDividir.TabIndex = 3
@@ -95,7 +97,7 @@ Partial Class Form_calculadora
         Me.btnMultiplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnMultiplicar.FlatAppearance.BorderSize = 0
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMultiplicar.Location = New System.Drawing.Point(202, 131)
+        Me.btnMultiplicar.Location = New System.Drawing.Point(206, 167)
         Me.btnMultiplicar.Name = "btnMultiplicar"
         Me.btnMultiplicar.Size = New System.Drawing.Size(40, 40)
         Me.btnMultiplicar.TabIndex = 4
@@ -232,12 +234,25 @@ Partial Class Form_calculadora
         Me.btn0.TabIndex = 15
         Me.btn0.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_cancelar_o_último_dígito2
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(203, 85)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(47, 50)
+        Me.Button1.TabIndex = 16
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form_calculadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LavenderBlush
+        Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(260, 319)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn0)
         Me.Controls.Add(Me.btn9)
         Me.Controls.Add(Me.btn8)
@@ -280,4 +295,5 @@ Partial Class Form_calculadora
     Friend WithEvents btn8 As Button
     Friend WithEvents btn7 As Button
     Friend WithEvents btn0 As Button
+    Friend WithEvents Button1 As Button
 End Class
