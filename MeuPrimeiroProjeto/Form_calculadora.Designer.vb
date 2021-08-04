@@ -39,6 +39,8 @@ Partial Class Form_calculadora
         Me.btn7 = New System.Windows.Forms.Button()
         Me.btn0 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnCalcular
@@ -105,14 +107,15 @@ Partial Class Form_calculadora
         '
         'txtDisplay
         '
-        Me.txtDisplay.BackColor = System.Drawing.Color.GhostWhite
-        Me.txtDisplay.Dock = System.Windows.Forms.DockStyle.Top
+        Me.txtDisplay.BackColor = System.Drawing.Color.White
+        Me.txtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDisplay.Font = New System.Drawing.Font("MS UI Gothic", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtDisplay.Location = New System.Drawing.Point(0, 0)
+        Me.txtDisplay.Location = New System.Drawing.Point(0, 48)
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
-        Me.txtDisplay.Size = New System.Drawing.Size(260, 79)
+        Me.txtDisplay.Size = New System.Drawing.Size(260, 41)
         Me.txtDisplay.TabIndex = 5
+        Me.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btn1
         '
@@ -246,12 +249,23 @@ Partial Class Form_calculadora
         Me.Button1.TabIndex = 16
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.txtDisplay)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(260, 90)
+        Me.Panel1.TabIndex = 17
+        '
         'Form_calculadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(260, 319)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn0)
         Me.Controls.Add(Me.btn9)
@@ -263,7 +277,6 @@ Partial Class Form_calculadora
         Me.Controls.Add(Me.btn3)
         Me.Controls.Add(Me.btn2)
         Me.Controls.Add(Me.btn1)
-        Me.Controls.Add(Me.txtDisplay)
         Me.Controls.Add(Me.btnMultiplicar)
         Me.Controls.Add(Me.btnDividir)
         Me.Controls.Add(Me.btnMenos)
@@ -274,8 +287,9 @@ Partial Class Form_calculadora
         Me.Name = "Form_calculadora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form_calculadora"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -296,4 +310,5 @@ Partial Class Form_calculadora
     Friend WithEvents btn7 As Button
     Friend WithEvents btn0 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
 End Class
