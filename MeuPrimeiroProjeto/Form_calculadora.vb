@@ -10,53 +10,19 @@ Public Class Form_calculadora
 
     Private Sub AdicionarNumDisplay(numero As String)
 
-        If txtDisplay.Text.Length < 6 Then
+        If txtDisplay.Text.Length < 12 Then
             txtDisplay.Text += numero
         End If
 
     End Sub
 
-    Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
-        AdicionarNumDisplay("1")
+    Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click, btn2.Click, btn3.Click, btn4.Click, btn5.Click, btn6.Click, btn7.Click, btn8.Click, btn9.Click, btn0.Click
+        Dim nomeBotaoClicado = sender.name
+        Dim numeroBotao = nomeBotaoClicado.ToString.Replace("btn", "")
+        AdicionarNumDisplay(numeroBotao)
     End Sub
 
-    Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
-        AdicionarNumDisplay("2")
-    End Sub
-
-    Private Sub btn3_Click(sender As Object, e As EventArgs) Handles btn3.Click
-        AdicionarNumDisplay("3")
-    End Sub
-
-    Private Sub btn4_Click(sender As Object, e As EventArgs) Handles btn4.Click
-        AdicionarNumDisplay("4")
-    End Sub
-
-    Private Sub btn5_Click(sender As Object, e As EventArgs) Handles btn5.Click
-        AdicionarNumDisplay("5")
-    End Sub
-
-    Private Sub btn6_Click(sender As Object, e As EventArgs) Handles btn6.Click
-        AdicionarNumDisplay("6")
-    End Sub
-
-    Private Sub btn7_Click(sender As Object, e As EventArgs) Handles btn7.Click
-        AdicionarNumDisplay("7")
-    End Sub
-
-    Private Sub btn8_Click(sender As Object, e As EventArgs) Handles btn8.Click
-        AdicionarNumDisplay("8")
-
-    End Sub
-
-    Private Sub btn9_Click(sender As Object, e As EventArgs) Handles btn9.Click
-        AdicionarNumDisplay("9")
-    End Sub
-
-    Private Sub btn0_Click(sender As Object, e As EventArgs) Handles btn0.Click
-        AdicionarNumDisplay("0")
-    End Sub
-
+#Region "Set BackgroundImage botões"
     '-----------------------------------------btnMais-----------------------------------------'
     Private Sub btnMais_MouseHover(sender As Object, e As EventArgs) Handles btnMais.MouseHover
         btnMais.BackgroundImage = Image.FromFile("C:\Users\Brenda\Desktop\Icons 8\icons8-soma-64-branco.png")
@@ -123,6 +89,8 @@ Public Class Form_calculadora
     Private Sub btnDividir_MouseUp(sender As Object, e As MouseEventArgs) Handles btnDividir.MouseUp
         btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64_branco
     End Sub
+
+#End Region
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
