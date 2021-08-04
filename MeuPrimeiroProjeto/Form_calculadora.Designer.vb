@@ -110,10 +110,11 @@ Partial Class Form_calculadora
         Me.txtDisplay.BackColor = System.Drawing.Color.White
         Me.txtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDisplay.Font = New System.Drawing.Font("MS UI Gothic", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtDisplay.Location = New System.Drawing.Point(0, 48)
+        Me.txtDisplay.Location = New System.Drawing.Point(3, 48)
+        Me.txtDisplay.MaxLength = 4
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
-        Me.txtDisplay.Size = New System.Drawing.Size(260, 41)
+        Me.txtDisplay.Size = New System.Drawing.Size(254, 41)
         Me.txtDisplay.TabIndex = 5
         Me.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '

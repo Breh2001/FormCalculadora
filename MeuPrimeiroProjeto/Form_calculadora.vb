@@ -2,48 +2,59 @@
 
 Public Class Form_calculadora
     Private Const V As String = ""
-    Dim valor1 As Integer
-    Dim valor2 As Integer
+    Dim valor1 As Long
+    Dim valor2 As Long
     Dim operador As String
 
+    'Cint () -> converter para inteiro'
+
+    Private Sub AdicionarNumDisplay(numero As String)
+
+        If txtDisplay.Text.Length < 6 Then
+            txtDisplay.Text += numero
+        End If
+
+    End Sub
+
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
-        txtDisplay.Text += "1"
+        AdicionarNumDisplay("1")
     End Sub
 
     Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
-        txtDisplay.Text += "2"
+        AdicionarNumDisplay("2")
     End Sub
 
     Private Sub btn3_Click(sender As Object, e As EventArgs) Handles btn3.Click
-        txtDisplay.Text += "3"
+        AdicionarNumDisplay("3")
     End Sub
 
     Private Sub btn4_Click(sender As Object, e As EventArgs) Handles btn4.Click
-        txtDisplay.Text += "4"
+        AdicionarNumDisplay("4")
     End Sub
 
     Private Sub btn5_Click(sender As Object, e As EventArgs) Handles btn5.Click
-        txtDisplay.Text += "5"
+        AdicionarNumDisplay("5")
     End Sub
 
     Private Sub btn6_Click(sender As Object, e As EventArgs) Handles btn6.Click
-        txtDisplay.Text += "6"
+        AdicionarNumDisplay("6")
     End Sub
 
     Private Sub btn7_Click(sender As Object, e As EventArgs) Handles btn7.Click
-        txtDisplay.Text += "7"
+        AdicionarNumDisplay("7")
     End Sub
 
     Private Sub btn8_Click(sender As Object, e As EventArgs) Handles btn8.Click
-        txtDisplay.Text += "8"
+        AdicionarNumDisplay("8")
+
     End Sub
 
     Private Sub btn9_Click(sender As Object, e As EventArgs) Handles btn9.Click
-        txtDisplay.Text += "9"
+        AdicionarNumDisplay("9")
     End Sub
 
     Private Sub btn0_Click(sender As Object, e As EventArgs) Handles btn0.Click
-        txtDisplay.Text += "0"
+        AdicionarNumDisplay("0")
     End Sub
 
     '-----------------------------------------btnMais-----------------------------------------'
@@ -117,7 +128,7 @@ Public Class Form_calculadora
 
         valor2 = txtDisplay.Text
 
-        Dim calculaSoma As Integer
+        Dim calculaSoma As Long
 
         If operador = "+" Then
             calculaSoma = valor1 + valor2
@@ -169,10 +180,8 @@ Public Class Form_calculadora
 
     Private Sub txtDisplay_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtDisplay.KeyPress
 
-        If Not (Char.IsDigit(e.KeyChar) OrElse Char.IsControl(e.KeyChar)) Then
-
+        If Not (Char.IsDigit(e.KeyChar) OrElse Char.IsControl(e.KeyChar)) OrElse txtDisplay.Text.Length > 12 Then
             e.Handled = True
-
         End If
 
     End Sub
