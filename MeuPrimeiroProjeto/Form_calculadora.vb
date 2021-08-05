@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Reflection
 
 Public Class Form_calculadora
     Private Const V As String = ""
@@ -28,21 +29,35 @@ Public Class Form_calculadora
     End Sub
 
 #Region "Set BackgroundImage botões"
-    '-----------------------------------------btnMais-----------------------------------------'
-    Private Sub btnMais_MouseHover(sender As Object, e As EventArgs) Handles btnMais.MouseHover
-        btnMais.BackgroundImage = My.Resources.icons8_soma_64_branco
+    '-----------------------------------------btnSoma-----------------------------------------'
+    'Private Sub btnSoma_MouseHover(sender As Object, e As EventArgs)
+    '    btnSoma.BackgroundImage = My.Resources.Soma_mouse_up
+    'End Sub
+
+    Private Sub btnSoma_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnSoma.MouseHover
+
+        Dim variavel = sender.name
+        Dim nomeVariavel = variavel.ToString.Replace("btn", "")
+
+        'Dim pinfo As PropertyInfo = GetType().GetProperty("YourProperty")
+        'Dim value As Object = pinfo.GetValue(YourInstantiatedObject, Nothing)
+
+        'btnSoma.BackgroundImage = My.Resources.nomeVariavel
+
     End Sub
 
-    Private Sub btnMais_MouseLeave(sender As Object, e As EventArgs) Handles btnMais.MouseLeave
-        btnMais.BackgroundImage = My.Resources.icons8_soma_64
+    'Private Sub btnSoma_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave
+
+    '    btnSoma.BackgroundImage = My.Resources.Soma_mouse_leave
+
+    'End Sub
+
+    Private Sub btnSoma_MouseDown(sender As Object, e As MouseEventArgs)
+        btnSoma.BackgroundImage = My.Resources.Soma_mouse_down
     End Sub
 
-    Private Sub btnMais_MouseDown(sender As Object, e As MouseEventArgs) Handles btnMais.MouseDown
-        btnMais.BackgroundImage = My.Resources.icons8_soma_64_dark
-    End Sub
-
-    Private Sub btnMais_MouseUp(sender As Object, e As MouseEventArgs) Handles btnMais.MouseUp
-        btnMais.BackgroundImage = My.Resources.icons8_soma_64_branco
+    Private Sub btnSoma_MouseUp(sender As Object, e As MouseEventArgs)
+        btnSoma.BackgroundImage = My.Resources.Soma_mouse_up
     End Sub
 
     '-----------------------------------------btnMenos-----------------------------------------'
@@ -101,45 +116,31 @@ Public Class Form_calculadora
 
         valor2 = txtDisplay.Text
 
-        Dim calculaSoma As Long
+        Dim calculaOperador As Long
 
         Select Case operador
             Case "+"
-                calculaSoma = valor1 + valor2
+                calculaOperador = valor1 + valor2
             Case "-"
-                calculaSoma = valor1 - valor2
+                calculaOperador = valor1 - valor2
             Case "*"
-                calculaSoma = valor1 * valor2
+                calculaOperador = valor1 * valor2
             Case "/"
-                calculaSoma = valor1 / valor2
+                calculaOperador = valor1 / valor2
         End Select
 
-        'If operador = "+" Then
-        '    calculaSoma = valor1 + valor2
-        'End If
+        txtDisplay.Text = calculaOperador
 
-        'If operador = "-" Then
-        '    calculaSoma = valor1 - valor2
-        'End If
-
-        'If operador = "*" Then
-        '    calculaSoma = valor1 * valor2
-        'End If
-
-        'If operador = "/" Then
-        '    calculaSoma = valor1 / valor2
-        'End If
-
-        txtDisplay.Text = calculaSoma
+        lblExpressao.Text = valor1.ToString + operador + valor2.ToString + "="
 
     End Sub
 
-    Private Sub btnMais_Click(sender As Object, e As EventArgs) Handles btnMais.Click
+    Private Sub btnSoma_Click(sender As Object, e As EventArgs) Handles btnSoma.Click
 
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "+"
-        'lblExpressao.Text = valor1.ToString + operador
+        lblExpressao.Text = valor1.ToString + operador
 
     End Sub
 
@@ -148,6 +149,7 @@ Public Class Form_calculadora
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "-"
+        lblExpressao.Text = valor1.ToString + operador
 
     End Sub
 
@@ -156,6 +158,7 @@ Public Class Form_calculadora
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "*"
+        lblExpressao.Text = valor1.ToString + operador
 
     End Sub
 
@@ -164,6 +167,7 @@ Public Class Form_calculadora
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "/"
+        lblExpressao.Text = valor1.ToString + operador
 
     End Sub
 

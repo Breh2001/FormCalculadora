@@ -23,7 +23,6 @@ Partial Class Form_calculadora
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnCalcular = New System.Windows.Forms.Button()
-        Me.btnMais = New System.Windows.Forms.Button()
         Me.btnMenos = New System.Windows.Forms.Button()
         Me.btnDividir = New System.Windows.Forms.Button()
         Me.btnMultiplicar = New System.Windows.Forms.Button()
@@ -41,6 +40,7 @@ Partial Class Form_calculadora
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblExpressao = New System.Windows.Forms.Label()
+        Me.btnSoma = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,20 +55,6 @@ Partial Class Form_calculadora
         Me.btnCalcular.Size = New System.Drawing.Size(47, 41)
         Me.btnCalcular.TabIndex = 0
         Me.btnCalcular.UseVisualStyleBackColor = True
-        '
-        'btnMais
-        '
-        Me.btnMais.BackColor = System.Drawing.Color.Transparent
-        Me.btnMais.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_soma_64
-        Me.btnMais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnMais.FlatAppearance.BorderSize = 0
-        Me.btnMais.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMais.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnMais.Location = New System.Drawing.Point(206, 242)
-        Me.btnMais.Name = "btnMais"
-        Me.btnMais.Size = New System.Drawing.Size(40, 40)
-        Me.btnMais.TabIndex = 1
-        Me.btnMais.UseVisualStyleBackColor = False
         '
         'btnMenos
         '
@@ -265,11 +251,25 @@ Partial Class Form_calculadora
         'lblExpressao
         '
         Me.lblExpressao.AutoSize = True
-        Me.lblExpressao.Location = New System.Drawing.Point(209, 18)
+        Me.lblExpressao.Location = New System.Drawing.Point(190, 20)
+        Me.lblExpressao.MaximumSize = New System.Drawing.Size(60, 15)
+        Me.lblExpressao.MinimumSize = New System.Drawing.Size(60, 15)
         Me.lblExpressao.Name = "lblExpressao"
-        Me.lblExpressao.Size = New System.Drawing.Size(41, 15)
+        Me.lblExpressao.Size = New System.Drawing.Size(60, 15)
         Me.lblExpressao.TabIndex = 6
-        Me.lblExpressao.Text = "Label1"
+        Me.lblExpressao.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'btnSoma
+        '
+        Me.btnSoma.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.Soma_mouse_leave
+        Me.btnSoma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSoma.FlatAppearance.BorderSize = 0
+        Me.btnSoma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSoma.Location = New System.Drawing.Point(206, 244)
+        Me.btnSoma.Name = "btnSoma"
+        Me.btnSoma.Size = New System.Drawing.Size(40, 40)
+        Me.btnSoma.TabIndex = 18
+        Me.btnSoma.UseVisualStyleBackColor = True
         '
         'Form_calculadora
         '
@@ -277,6 +277,7 @@ Partial Class Form_calculadora
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(260, 319)
+        Me.Controls.Add(Me.btnSoma)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn0)
@@ -292,7 +293,6 @@ Partial Class Form_calculadora
         Me.Controls.Add(Me.btnMultiplicar)
         Me.Controls.Add(Me.btnDividir)
         Me.Controls.Add(Me.btnMenos)
-        Me.Controls.Add(Me.btnMais)
         Me.Controls.Add(Me.btnCalcular)
         Me.MaximumSize = New System.Drawing.Size(276, 358)
         Me.MinimumSize = New System.Drawing.Size(276, 358)
@@ -306,7 +306,6 @@ Partial Class Form_calculadora
     End Sub
 
     Friend WithEvents btnCalcular As Button
-    Friend WithEvents btnMais As Button
     Friend WithEvents btnMenos As Button
     Friend WithEvents btnDividir As Button
     Friend WithEvents btnMultiplicar As Button
@@ -324,4 +323,6 @@ Partial Class Form_calculadora
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblExpressao As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnSoma As Button
 End Class
