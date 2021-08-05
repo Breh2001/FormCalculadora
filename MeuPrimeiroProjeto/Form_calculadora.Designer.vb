@@ -22,6 +22,7 @@ Partial Class Form_calculadora
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_calculadora))
         Me.btnCalcular = New System.Windows.Forms.Button()
         Me.btnMenos = New System.Windows.Forms.Button()
         Me.btnDividir = New System.Windows.Forms.Button()
@@ -41,6 +42,7 @@ Partial Class Form_calculadora
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblExpressao = New System.Windows.Forms.Label()
         Me.btnSoma = New System.Windows.Forms.Button()
+        Me.btnClean = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -271,12 +273,25 @@ Partial Class Form_calculadora
         Me.btnSoma.TabIndex = 18
         Me.btnSoma.UseVisualStyleBackColor = True
         '
+        'btnClean
+        '
+        Me.btnClean.BackgroundImage = CType(resources.GetObject("btnClean.BackgroundImage"), System.Drawing.Image)
+        Me.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnClean.FlatAppearance.BorderSize = 0
+        Me.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClean.Location = New System.Drawing.Point(10, 244)
+        Me.btnClean.Name = "btnClean"
+        Me.btnClean.Size = New System.Drawing.Size(58, 58)
+        Me.btnClean.TabIndex = 19
+        Me.btnClean.UseVisualStyleBackColor = True
+        '
         'Form_calculadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(260, 319)
+        Me.Controls.Add(Me.btnClean)
         Me.Controls.Add(Me.btnSoma)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
@@ -325,4 +340,5 @@ Partial Class Form_calculadora
     Friend WithEvents lblExpressao As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents btnSoma As Button
+    Friend WithEvents btnClean As Button
 End Class

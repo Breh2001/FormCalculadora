@@ -185,6 +185,13 @@ Public Class Form_calculadora
 
     End Sub
 
+    Private Sub btnClean_Click(sender As Object, e As EventArgs) Handles btnClean.Click
+
+        lblExpressao.Text = ""
+        txtDisplay.Text = ""
+
+    End Sub
+
     '--------------colocar função ao sinal de Mais---------------
 
     'armazenar o valor já inserido no txtDisplay
