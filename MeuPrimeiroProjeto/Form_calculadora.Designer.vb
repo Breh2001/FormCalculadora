@@ -38,7 +38,7 @@ Partial Class Form_calculadora
         Me.btn8 = New System.Windows.Forms.Button()
         Me.btn7 = New System.Windows.Forms.Button()
         Me.btn0 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnApagar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblExpressao = New System.Windows.Forms.Label()
         Me.btnSoma = New System.Windows.Forms.Button()
@@ -60,7 +60,7 @@ Partial Class Form_calculadora
         '
         'btnMenos
         '
-        Me.btnMenos.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_subtração_64
+        Me.btnMenos.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.SubtracaoMouseLeave
         Me.btnMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnMenos.FlatAppearance.BorderSize = 0
         Me.btnMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -72,7 +72,7 @@ Partial Class Form_calculadora
         '
         'btnDividir
         '
-        Me.btnDividir.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_dividisão_64
+        Me.btnDividir.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.DividisaoMouseLeave
         Me.btnDividir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDividir.FlatAppearance.BorderSize = 0
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -84,7 +84,7 @@ Partial Class Form_calculadora
         '
         'btnMultiplicar
         '
-        Me.btnMultiplicar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_multiplicação_64
+        Me.btnMultiplicar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.MultiplicacaoMouseLeave
         Me.btnMultiplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnMultiplicar.FlatAppearance.BorderSize = 0
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -227,17 +227,17 @@ Partial Class Form_calculadora
         Me.btn0.TabIndex = 15
         Me.btn0.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnApagar
         '
-        Me.Button1.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_cancelar_o_último_dígito2
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(203, 85)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(47, 50)
-        Me.Button1.TabIndex = 16
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnApagar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_cancelar_o_último_dígito2
+        Me.btnApagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnApagar.FlatAppearance.BorderSize = 0
+        Me.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApagar.Location = New System.Drawing.Point(203, 85)
+        Me.btnApagar.Name = "btnApagar"
+        Me.btnApagar.Size = New System.Drawing.Size(47, 50)
+        Me.btnApagar.TabIndex = 16
+        Me.btnApagar.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -263,7 +263,7 @@ Partial Class Form_calculadora
         '
         'btnSoma
         '
-        Me.btnSoma.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.Soma_mouse_leave
+        Me.btnSoma.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.SomaMouseLeave
         Me.btnSoma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSoma.FlatAppearance.BorderSize = 0
         Me.btnSoma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -294,7 +294,7 @@ Partial Class Form_calculadora
         Me.Controls.Add(Me.btnClean)
         Me.Controls.Add(Me.btnSoma)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnApagar)
         Me.Controls.Add(Me.btn0)
         Me.Controls.Add(Me.btn9)
         Me.Controls.Add(Me.btn8)
@@ -335,7 +335,7 @@ Partial Class Form_calculadora
     Friend WithEvents btn8 As Button
     Friend WithEvents btn7 As Button
     Friend WithEvents btn0 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnApagar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblExpressao As Label
     Friend WithEvents Button2 As Button

@@ -29,85 +29,45 @@ Public Class Form_calculadora
     End Sub
 
 #Region "Set BackgroundImage botões"
-    '-----------------------------------------btnSoma-----------------------------------------'
-    'Private Sub btnSoma_MouseHover(sender As Object, e As EventArgs)
-    '    btnSoma.BackgroundImage = My.Resources.Soma_mouse_up
-    'End Sub
 
-    Private Sub btnSoma_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnSoma.MouseHover
+    Private Sub SetBackGroundImageBtn(sender As Object, nomeEvento As String)
+        Try
 
-        Dim variavel = sender.name
-        Dim nomeVariavel = variavel.ToString.Replace("btn", "")
+            Dim nomeImagem = sender.name.ToString().Substring(3) + nomeEvento
+            Debug.WriteLine(nomeImagem)
+            Dim imagem = My.Resources.ResourceManager.GetObject(nomeImagem)
+            If Not IsNothing(imagem) Then
+                sender.BackgroundImage = imagem
+            End If
 
-        'Dim pinfo As PropertyInfo = GetType().GetProperty("YourProperty")
-        'Dim value As Object = pinfo.GetValue(YourInstantiatedObject, Nothing)
+        Catch ex As Exception
 
-        'btnSoma.BackgroundImage = My.Resources.nomeVariavel
+        End Try
+    End Sub
+
+
+    Private Sub btnsOperacoes_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnMultiplicar.MouseLeave, btnDividir.MouseLeave, btnMenos.MouseLeave
+
+        SetBackGroundImageBtn(sender, nomeEvento:="MouseLeave")
 
     End Sub
 
-    'Private Sub btnSoma_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave
+    Private Sub btnsOperacoes_MouseHover(sender As Object, e As EventArgs) Handles btnSoma.MouseHover, btnMultiplicar.MouseHover, btnDividir.MouseHover, btnMenos.MouseHover
 
-    '    btnSoma.BackgroundImage = My.Resources.Soma_mouse_leave
+        SetBackGroundImageBtn(sender, nomeEvento:="MouseHover")
 
-    'End Sub
-
-    Private Sub btnSoma_MouseDown(sender As Object, e As MouseEventArgs)
-        btnSoma.BackgroundImage = My.Resources.Soma_mouse_down
     End Sub
 
-    Private Sub btnSoma_MouseUp(sender As Object, e As MouseEventArgs)
-        btnSoma.BackgroundImage = My.Resources.Soma_mouse_up
+    Private Sub btnsOperacoes_MouseDown(sender As Object, e As EventArgs) Handles btnSoma.MouseDown, btnMultiplicar.MouseDown, btnDividir.MouseDown, btnMenos.MouseDown
+
+        SetBackGroundImageBtn(sender, nomeEvento:="MouseDown")
+
     End Sub
 
-    '-----------------------------------------btnMenos-----------------------------------------'
-    Private Sub btnMenos_MouseHover(sender As Object, e As EventArgs) Handles btnMenos.MouseHover
-        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64_branco
-    End Sub
+    Private Sub btnsOperacoes_MouseUp(sender As Object, e As EventArgs) Handles btnSoma.MouseUp, btnMultiplicar.MouseUp, btnDividir.MouseUp, btnMenos.MouseUp
 
-    Private Sub btnMenos_MouseLeave(sender As Object, e As EventArgs) Handles btnMenos.MouseLeave
-        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64
-    End Sub
+        SetBackGroundImageBtn(sender, nomeEvento:="MouseUp")
 
-    Private Sub btnMenos_MouseDown(sender As Object, e As MouseEventArgs) Handles btnMenos.MouseDown
-        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64_dark
-    End Sub
-
-    Private Sub btnMenos_MouseUp(sender As Object, e As MouseEventArgs) Handles btnMenos.MouseUp
-        btnMenos.BackgroundImage = My.Resources.icons8_subtração_64_branco
-    End Sub
-
-    '---------------------------------------btnMultiplicar---------------------------------------'
-    Private Sub btnMultiplicar_MouseHover(sender As Object, e As EventArgs) Handles btnMultiplicar.MouseHover
-        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64_branco
-    End Sub
-
-    Private Sub btnMultiplicar_MouseLeave(sender As Object, e As EventArgs) Handles btnMultiplicar.MouseLeave
-        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64
-    End Sub
-
-    Private Sub btnMultiplicar_MouseDown(sender As Object, e As MouseEventArgs) Handles btnMultiplicar.MouseDown
-        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64_dark
-    End Sub
-
-    Private Sub btnMultiplicar_MouseUp(sender As Object, e As MouseEventArgs) Handles btnMultiplicar.MouseUp
-        btnMultiplicar.BackgroundImage = My.Resources.icons8_multiplicação_64_branco
-    End Sub
-    '---------------------------------------btnDividir---------------------------------------'
-    Private Sub btnDividir_MouseHover(sender As Object, e As EventArgs) Handles btnDividir.MouseHover
-        btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64_branco
-    End Sub
-
-    Private Sub btnDividir_MouseLeave(sender As Object, e As EventArgs) Handles btnDividir.MouseLeave
-        btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64
-    End Sub
-
-    Private Sub btnDividir_MouseDown(sender As Object, e As MouseEventArgs) Handles btnDividir.MouseDown
-        btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64_dark
-    End Sub
-
-    Private Sub btnDividir_MouseUp(sender As Object, e As MouseEventArgs) Handles btnDividir.MouseUp
-        btnDividir.BackgroundImage = My.Resources.icons8_dividisão_64_branco
     End Sub
 
 #End Region
@@ -171,7 +131,7 @@ Public Class Form_calculadora
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Apagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
 
         txtDisplay.Text = ""
 
