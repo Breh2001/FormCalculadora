@@ -31,6 +31,7 @@ Public Class Form_calculadora
 #Region "Set BackgroundImage botões"
 
     Private Sub SetBackGroundImageBtn(sender As Object, nomeEvento As String)
+
         Try
 
             Dim nomeImagem = sender.name.ToString().Substring(3) + nomeEvento
@@ -41,8 +42,9 @@ Public Class Form_calculadora
             End If
 
         Catch ex As Exception
-
+            Return
         End Try
+
     End Sub
 
 
@@ -86,7 +88,15 @@ Public Class Form_calculadora
             Case "*"
                 calculaOperador = valor1 * valor2
             Case "/"
-                calculaOperador = valor1 / valor2
+                If valor2 = 0 Then
+                    lblExpressao.Text = ""
+                    txtDisplay.Font = New Font("Arial", 10)
+                    txtDisplay.Text = "Não é possível dividir por zero"
+                    txtDisplay.Font = New Font("Arial", 22)
+                    Return
+                Else
+                    calculaOperador = valor1 / valor2
+                End If
         End Select
 
         txtDisplay.Text = calculaOperador
@@ -97,6 +107,8 @@ Public Class Form_calculadora
 
     Private Sub btnSoma_Click(sender As Object, e As EventArgs) Handles btnSoma.Click
 
+        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
+
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "+"
@@ -105,6 +117,8 @@ Public Class Form_calculadora
     End Sub
 
     Private Sub btnMenos_Click(sender As Object, e As EventArgs) Handles btnMenos.Click
+
+        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
 
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
@@ -115,6 +129,8 @@ Public Class Form_calculadora
 
     Private Sub btnMultiplicar_Click(sender As Object, e As EventArgs) Handles btnMultiplicar.Click
 
+        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
+
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
         operador = "*"
@@ -123,6 +139,8 @@ Public Class Form_calculadora
     End Sub
 
     Private Sub btnDividir_Click(sender As Object, e As EventArgs) Handles btnDividir.Click
+
+        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
 
         valor1 = txtDisplay.Text
         txtDisplay.Text = ""
@@ -133,7 +151,10 @@ Public Class Form_calculadora
 
     Private Sub Apagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
 
-        txtDisplay.Text = ""
+        Dim valorAtual = txtDisplay.Text
+        'Substring remove a utilima posição
+        'E atualiza a txtDisplay
+        txtDisplay.Text = valorAtual.Substring(0, valorAtual.Length() - 1)
 
     End Sub
 
