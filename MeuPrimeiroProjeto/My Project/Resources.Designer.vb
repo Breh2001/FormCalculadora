@@ -63,9 +63,29 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property DividisaoMouseLeave() As System.Drawing.Bitmap
+        Friend ReadOnly Property DividirMouseDown() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("DividisaoMouseLeave", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("DividirMouseDown", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property DividirMouseHoverUp() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("DividirMouseHoverUp", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property DividirMouseLeave() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("DividirMouseLeave", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -243,49 +263,9 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property icons8_dividisão_64_branco() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("icons8_dividisão_64_branco", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property icons8_dividisão_64_dark() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("icons8_dividisão_64_dark", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property icons8_mais_64() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icons8-mais-64", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property icons8_multiplicação_64_branco() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("icons8_multiplicação_64_branco", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property icons8_multiplicação_64_dark() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("icons8_multiplicação_64_dark", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -313,9 +293,9 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property icons8_subtração_64_branco() As System.Drawing.Bitmap
+        Friend ReadOnly Property MultiplicarMouseDown() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("icons8_subtração_64_branco", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("MultiplicarMouseDown", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -323,9 +303,9 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property icons8_subtração_64_dark() As System.Drawing.Bitmap
+        Friend ReadOnly Property MultiplicarMouseHoverUp() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("icons8_subtração_64_dark", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("MultiplicarMouseHoverUp", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -333,9 +313,9 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property MultiplicacaoMouseLeave() As System.Drawing.Bitmap
+        Friend ReadOnly Property MultiplicarMouseLeave() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("MultiplicacaoMouseLeave", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("MultiplicarMouseLeave", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -353,9 +333,9 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property SomaMouseHover() As System.Drawing.Bitmap
+        Friend ReadOnly Property SomaMouseHoverUp() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("SomaMouseHover", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("SomaMouseHoverUp", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -383,9 +363,29 @@ Namespace My.Resources
         '''<summary>
         '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property SubtracaoMouseLeave() As System.Drawing.Bitmap
+        Friend ReadOnly Property SubtrairMouseDown() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("SubtracaoMouseLeave", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("SubtrairMouseDown", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SubtrairMouseHoverUp() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SubtrairMouseHoverUp", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SubtrairMouseLeave() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SubtrairMouseLeave", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

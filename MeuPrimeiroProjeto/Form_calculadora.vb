@@ -48,27 +48,21 @@ Public Class Form_calculadora
     End Sub
 
 
-    Private Sub btnsOperacoes_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnMultiplicar.MouseLeave, btnDividir.MouseLeave, btnMenos.MouseLeave
+    Private Sub btnsOperacoes_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnMultiplicar.MouseLeave, btnDividir.MouseLeave, btnSubtrair.MouseLeave
 
         SetBackGroundImageBtn(sender, nomeEvento:="MouseLeave")
 
     End Sub
 
-    Private Sub btnsOperacoes_MouseHover(sender As Object, e As EventArgs) Handles btnSoma.MouseHover, btnMultiplicar.MouseHover, btnDividir.MouseHover, btnMenos.MouseHover
+    Private Sub btnsOperacoes_MouseHover(sender As Object, e As EventArgs) Handles btnSoma.MouseHover, btnMultiplicar.MouseHover, btnDividir.MouseHover, btnSubtrair.MouseHover, btnSoma.MouseUp, btnMultiplicar.MouseUp, btnDividir.MouseUp, btnSubtrair.MouseUp
 
-        SetBackGroundImageBtn(sender, nomeEvento:="MouseHover")
+        SetBackGroundImageBtn(sender, nomeEvento:="MouseHoverUp")
 
     End Sub
 
-    Private Sub btnsOperacoes_MouseDown(sender As Object, e As EventArgs) Handles btnSoma.MouseDown, btnMultiplicar.MouseDown, btnDividir.MouseDown, btnMenos.MouseDown
+    Private Sub btnsOperacoes_MouseDown(sender As Object, e As EventArgs) Handles btnSoma.MouseDown, btnMultiplicar.MouseDown, btnDividir.MouseDown, btnSubtrair.MouseDown
 
         SetBackGroundImageBtn(sender, nomeEvento:="MouseDown")
-
-    End Sub
-
-    Private Sub btnsOperacoes_MouseUp(sender As Object, e As EventArgs) Handles btnSoma.MouseUp, btnMultiplicar.MouseUp, btnDividir.MouseUp, btnMenos.MouseUp
-
-        SetBackGroundImageBtn(sender, nomeEvento:="MouseUp")
 
     End Sub
 
@@ -116,7 +110,7 @@ Public Class Form_calculadora
 
     End Sub
 
-    Private Sub btnMenos_Click(sender As Object, e As EventArgs) Handles btnMenos.Click
+    Private Sub btnSubtrair_Click(sender As Object, e As EventArgs) Handles btnSubtrair.Click
 
         If String.IsNullOrEmpty(txtDisplay.Text) Then Return
 

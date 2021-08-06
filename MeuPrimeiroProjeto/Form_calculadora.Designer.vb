@@ -24,7 +24,7 @@ Partial Class Form_calculadora
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_calculadora))
         Me.btnCalcular = New System.Windows.Forms.Button()
-        Me.btnMenos = New System.Windows.Forms.Button()
+        Me.btnSubtrair = New System.Windows.Forms.Button()
         Me.btnDividir = New System.Windows.Forms.Button()
         Me.btnMultiplicar = New System.Windows.Forms.Button()
         Me.txtDisplay = New System.Windows.Forms.TextBox()
@@ -58,21 +58,21 @@ Partial Class Form_calculadora
         Me.btnCalcular.TabIndex = 0
         Me.btnCalcular.UseVisualStyleBackColor = True
         '
-        'btnMenos
+        'btnSubtrair
         '
-        Me.btnMenos.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.SubtracaoMouseLeave
-        Me.btnMenos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnMenos.FlatAppearance.BorderSize = 0
-        Me.btnMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMenos.Location = New System.Drawing.Point(206, 204)
-        Me.btnMenos.Name = "btnMenos"
-        Me.btnMenos.Size = New System.Drawing.Size(40, 40)
-        Me.btnMenos.TabIndex = 2
-        Me.btnMenos.UseVisualStyleBackColor = True
+        Me.btnSubtrair.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.SubtrairMouseLeave
+        Me.btnSubtrair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSubtrair.FlatAppearance.BorderSize = 0
+        Me.btnSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSubtrair.Location = New System.Drawing.Point(206, 204)
+        Me.btnSubtrair.Name = "btnSubtrair"
+        Me.btnSubtrair.Size = New System.Drawing.Size(40, 40)
+        Me.btnSubtrair.TabIndex = 2
+        Me.btnSubtrair.UseVisualStyleBackColor = True
         '
         'btnDividir
         '
-        Me.btnDividir.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.DividisaoMouseLeave
+        Me.btnDividir.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.DividirMouseLeave
         Me.btnDividir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDividir.FlatAppearance.BorderSize = 0
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -84,7 +84,7 @@ Partial Class Form_calculadora
         '
         'btnMultiplicar
         '
-        Me.btnMultiplicar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.MultiplicacaoMouseLeave
+        Me.btnMultiplicar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.MultiplicarMouseLeave
         Me.btnMultiplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnMultiplicar.FlatAppearance.BorderSize = 0
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -307,7 +307,7 @@ Partial Class Form_calculadora
         Me.Controls.Add(Me.btn1)
         Me.Controls.Add(Me.btnMultiplicar)
         Me.Controls.Add(Me.btnDividir)
-        Me.Controls.Add(Me.btnMenos)
+        Me.Controls.Add(Me.btnSubtrair)
         Me.Controls.Add(Me.btnCalcular)
         Me.MaximumSize = New System.Drawing.Size(276, 358)
         Me.MinimumSize = New System.Drawing.Size(276, 358)
@@ -321,7 +321,7 @@ Partial Class Form_calculadora
     End Sub
 
     Friend WithEvents btnCalcular As Button
-    Friend WithEvents btnMenos As Button
+    Friend WithEvents btnSubtrair As Button
     Friend WithEvents btnDividir As Button
     Friend WithEvents btnMultiplicar As Button
     Friend WithEvents txtDisplay As TextBox
