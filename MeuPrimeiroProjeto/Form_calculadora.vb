@@ -84,9 +84,10 @@ Public Class Form_calculadora
             Case "/"
                 If valor2 = 0 Then
                     lblExpressao.Text = ""
-                    txtDisplay.Font = New Font("Arial", 10)
+                    txtDisplay.Font = New Font("Arial", 12)
+
                     txtDisplay.Text = "Não é possível dividir por zero"
-                    txtDisplay.Font = New Font("Arial", 22)
+                    DesabilitarTeclado()
                     Return
                 Else
                     calculaOperador = valor1 / valor2
@@ -160,10 +161,47 @@ Public Class Form_calculadora
 
     End Sub
 
+    Private Sub HabilitarTeclado()
+
+        pnlTeclado.Enabled = True
+        txtDisplay.Enabled = True
+
+    End Sub
+
+    Private Sub DesabilitarTeclado()
+
+        pnlTeclado.Enabled = False
+        txtDisplay.Enabled = False
+
+    End Sub
+
     Private Sub btnClean_Click(sender As Object, e As EventArgs) Handles btnClean.Click
 
+        txtDisplay.Font = New Font("MS UI Gothic", 27.75)
         lblExpressao.Text = ""
-        txtDisplay.Text = ""
+        txtDisplay.Clear()
+        HabilitarTeclado()
+
+    End Sub
+
+    Private Sub Form_KeyPress(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles btnSoma.KeyPress
+
+        Select Case Keys.Enter
+            Case Keys.Add
+                btnSoma.PerformClick()
+            Case 109
+                btnSubtrair.PerformClick()
+            Case 106
+                btnMultiplicar.PerformClick()
+            Case 111
+                btnDividir.PerformClick()
+        End Select
+
+    End Sub
+
+    Private Sub Form_calculadora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        KeyPreview = True
 
     End Sub
 
