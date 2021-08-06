@@ -105,6 +105,7 @@ Partial Class Form_calculadora
         Me.txtDisplay.MaxLength = 12
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
+        Me.txtDisplay.ReadOnly = True
         Me.txtDisplay.Size = New System.Drawing.Size(254, 41)
         Me.txtDisplay.TabIndex = 5
         Me.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -255,11 +256,10 @@ Partial Class Form_calculadora
         'lblExpressao
         '
         Me.lblExpressao.AutoSize = True
-        Me.lblExpressao.Location = New System.Drawing.Point(190, 20)
-        Me.lblExpressao.MaximumSize = New System.Drawing.Size(60, 15)
-        Me.lblExpressao.MinimumSize = New System.Drawing.Size(60, 15)
+        Me.lblExpressao.Location = New System.Drawing.Point(245, 8)
+        Me.lblExpressao.MaximumSize = New System.Drawing.Size(230, 0)
         Me.lblExpressao.Name = "lblExpressao"
-        Me.lblExpressao.Size = New System.Drawing.Size(60, 15)
+        Me.lblExpressao.Size = New System.Drawing.Size(0, 15)
         Me.lblExpressao.TabIndex = 6
         Me.lblExpressao.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -319,6 +319,7 @@ Partial Class Form_calculadora
         Me.Controls.Add(Me.btnClean)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlTeclado)
+        Me.KeyPreview = True
         Me.MaximumSize = New System.Drawing.Size(276, 358)
         Me.MinimumSize = New System.Drawing.Size(276, 358)
         Me.Name = "Form_calculadora"

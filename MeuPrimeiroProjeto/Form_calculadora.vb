@@ -3,8 +3,15 @@ Imports System.Reflection
 
 Public Class Form_calculadora
     Private Const V As String = ""
-    Dim valor1 As Long
-    Dim valor2 As Long
+
+    'Dim valor1 As Long
+    'Dim valor2 As Long
+
+    Dim valorMemoria As Long?
+    Dim valorNovo As Long
+
+    Dim Concatena As Boolean
+
     Dim operador As String
 
     'Cint () -> converter para inteiro
@@ -22,8 +29,11 @@ Public Class Form_calculadora
 
     Private Sub AdicionarNumDisplay(numero As String)
 
+        If Concatena = False Or txtDisplay.Text.Equals("0") Then txtDisplay.Clear()
+
         If txtDisplay.Text.Length < 12 Then
             txtDisplay.Text += numero
+            Concatena = True
         End If
 
     End Sub
@@ -70,79 +80,98 @@ Public Class Form_calculadora
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
-        valor2 = txtDisplay.Text
+        Calcular(0, "=")
 
-        Dim calculaOperador As Long
+    End Sub
 
-        Select Case operador
-            Case "+"
-                calculaOperador = valor1 + valor2
-            Case "-"
-                calculaOperador = valor1 - valor2
-            Case "*"
-                calculaOperador = valor1 * valor2
-            Case "/"
-                If valor2 = 0 Then
-                    lblExpressao.Text = ""
-                    txtDisplay.Font = New Font("Arial", 12)
+    Private Sub OperacaoMatematica(operador As String)
 
-                    txtDisplay.Text = "Não é possível dividir por zero"
-                    DesabilitarTeclado()
-                    Return
-                Else
-                    calculaOperador = valor1 / valor2
-                End If
-        End Select
+        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
 
-        txtDisplay.Text = calculaOperador
+        valorNovo = txtDisplay.Text
 
-        lblExpressao.Text = valor1.ToString + operador + valor2.ToString + "="
+        Calcular(valorNovo, operador)
+
+        'txtDisplay.SelectAll()
+
+        ' lblExpressao.Text = valorNovo.ToString + operador
+
+    End Sub
+
+    Private Sub Calcular(valorNovo As Decimal, operador As String)
+
+        Concatena = False
+
+        lblExpressao.Text = lblExpressao.Text + valorNovo.ToString + operador
+
+        If IsNothing(valorMemoria) Then
+            valorMemoria = valorNovo
+        Else
+
+            Select Case operador
+
+                Case "+"
+
+                    valorMemoria += valorNovo
+
+                Case "-"
+
+                    valorMemoria -= valorNovo
+
+                Case "*"
+
+                    valorMemoria *= valorNovo
+
+                Case "/"
+
+                    Try
+
+                        valorMemoria /= valorNovo
+
+                    Catch ex As DivideByZeroException
+
+                        lblExpressao.Text = ""
+                        txtDisplay.Font = New Font("Arial", 12)
+
+                        txtDisplay.Text = "Não é possível dividir por zero"
+                        DesabilitarTeclado()
+                        Exit Sub
+
+                    End Try
+
+            End Select
+
+        End If
+
+        txtDisplay.Text = valorMemoria
 
     End Sub
 
     Private Sub btnSoma_Click(sender As Object, e As EventArgs) Handles btnSoma.Click
 
-        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
-
-        valor1 = txtDisplay.Text
-        txtDisplay.Text = ""
-        operador = "+"
-        lblExpressao.Text = valor1.ToString + operador
+        OperacaoMatematica("+")
 
     End Sub
 
     Private Sub btnSubtrair_Click(sender As Object, e As EventArgs) Handles btnSubtrair.Click
 
-        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
-
-        valor1 = txtDisplay.Text
-        txtDisplay.Text = ""
-        operador = "-"
-        lblExpressao.Text = valor1.ToString + operador
+        OperacaoMatematica("-")
 
     End Sub
 
     Private Sub btnMultiplicar_Click(sender As Object, e As EventArgs) Handles btnMultiplicar.Click
 
-        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
-
-        valor1 = txtDisplay.Text
-        txtDisplay.Text = ""
-        operador = "*"
-        lblExpressao.Text = valor1.ToString + operador
+        OperacaoMatematica("*")
 
     End Sub
 
     Private Sub btnDividir_Click(sender As Object, e As EventArgs) Handles btnDividir.Click
 
-        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
-
-        valor1 = txtDisplay.Text
-        txtDisplay.Text = ""
-        operador = "/"
-        lblExpressao.Text = valor1.ToString + operador
+        OperacaoMatematica("/")
 
     End Sub
+
+
 
     Private Sub Apagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
 
@@ -179,29 +208,60 @@ Public Class Form_calculadora
 
         txtDisplay.Font = New Font("MS UI Gothic", 27.75)
         lblExpressao.Text = ""
-        txtDisplay.Clear()
+        txtDisplay.Text = "0"
+        valorMemoria = Nothing
+        valorNovo = 0
+        Concatena = True
         HabilitarTeclado()
 
     End Sub
 
-    Private Sub Form_KeyPress(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles btnSoma.KeyPress
+    Private Sub Form_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
 
-        Select Case Keys.Enter
+        Select Case e.KeyCode
             Case Keys.Add
                 btnSoma.PerformClick()
-            Case 109
+            Case Keys.Subtract
                 btnSubtrair.PerformClick()
-            Case 106
+            Case Keys.Multiply
                 btnMultiplicar.PerformClick()
-            Case 111
+            Case Keys.Divide
                 btnDividir.PerformClick()
+            Case Keys.Enter
+                btnCalcular.PerformClick()
+            Case Keys.Back
+                btnApagar.PerformClick()
+            Case Keys.D1, Keys.NumPad1
+                btn1.PerformClick()
+            Case Keys.D2, Keys.NumPad2
+                btn2.PerformClick()
+            Case Keys.D3, Keys.NumPad3
+                btn3.PerformClick()
+            Case Keys.D4, Keys.NumPad4
+                btn4.PerformClick()
+            Case Keys.D5, Keys.NumPad5
+                btn5.PerformClick()
+            Case Keys.D6, Keys.NumPad6
+                btn6.PerformClick()
+            Case Keys.D7, Keys.NumPad7
+                btn7.PerformClick()
+            Case Keys.D8, Keys.NumPad8
+                btn8.PerformClick()
+            Case Keys.D9, Keys.NumPad9
+                btn9.PerformClick()
+            Case Keys.D0, Keys.NumPad0
+                btn0.PerformClick()
         End Select
 
     End Sub
 
     Private Sub Form_calculadora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Concatena = True
+
         KeyPreview = True
+
+        valorMemoria = Nothing
 
     End Sub
 
