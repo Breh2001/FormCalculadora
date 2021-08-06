@@ -40,7 +40,7 @@ Partial Class Form_calculadora
         Me.btn0 = New System.Windows.Forms.Button()
         Me.btnApagar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblExpressao = New System.Windows.Forms.Label()
+        Me.txtOperacoes = New System.Windows.Forms.TextBox()
         Me.btnSoma = New System.Windows.Forms.Button()
         Me.btnClean = New System.Windows.Forms.Button()
         Me.pnlTeclado = New System.Windows.Forms.Panel()
@@ -245,7 +245,7 @@ Partial Class Form_calculadora
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.lblExpressao)
+        Me.Panel1.Controls.Add(Me.txtOperacoes)
         Me.Panel1.Controls.Add(Me.txtDisplay)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -253,15 +253,19 @@ Partial Class Form_calculadora
         Me.Panel1.Size = New System.Drawing.Size(260, 90)
         Me.Panel1.TabIndex = 17
         '
-        'lblExpressao
+        'txtOperacoes
         '
-        Me.lblExpressao.AutoSize = True
-        Me.lblExpressao.Location = New System.Drawing.Point(245, 8)
-        Me.lblExpressao.MaximumSize = New System.Drawing.Size(230, 0)
-        Me.lblExpressao.Name = "lblExpressao"
-        Me.lblExpressao.Size = New System.Drawing.Size(0, 15)
-        Me.lblExpressao.TabIndex = 6
-        Me.lblExpressao.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.txtOperacoes.BackColor = System.Drawing.Color.White
+        Me.txtOperacoes.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtOperacoes.Font = New System.Drawing.Font("MS UI Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtOperacoes.Location = New System.Drawing.Point(3, 4)
+        Me.txtOperacoes.MaxLength = 12
+        Me.txtOperacoes.Multiline = True
+        Me.txtOperacoes.Name = "txtOperacoes"
+        Me.txtOperacoes.ReadOnly = True
+        Me.txtOperacoes.Size = New System.Drawing.Size(254, 41)
+        Me.txtOperacoes.TabIndex = 6
+        Me.txtOperacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btnSoma
         '
@@ -349,9 +353,9 @@ Partial Class Form_calculadora
     Friend WithEvents btn0 As Button
     Friend WithEvents btnApagar As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents lblExpressao As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents btnSoma As Button
     Friend WithEvents btnClean As Button
     Friend WithEvents pnlTeclado As Panel
+    Friend WithEvents txtOperacoes As TextBox
 End Class

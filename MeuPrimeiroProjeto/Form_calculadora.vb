@@ -102,7 +102,7 @@ Public Class Form_calculadora
 
         Concatena = False
 
-        lblExpressao.Text = lblExpressao.Text + valorNovo.ToString + operador
+        txtOperacoes.Text = txtOperacoes.Text + valorNovo.ToString + operador
 
         If IsNothing(valorMemoria) Then
             valorMemoria = valorNovo
@@ -130,7 +130,7 @@ Public Class Form_calculadora
 
                     Catch ex As DivideByZeroException
 
-                        lblExpressao.Text = ""
+                        txtOperacoes.Text = ""
                         txtDisplay.Font = New Font("Arial", 12)
 
                         txtDisplay.Text = "Não é possível dividir por zero"
@@ -207,7 +207,7 @@ Public Class Form_calculadora
     Private Sub btnClean_Click(sender As Object, e As EventArgs) Handles btnClean.Click
 
         txtDisplay.Font = New Font("MS UI Gothic", 27.75)
-        lblExpressao.Text = ""
+        txtOperacoes.Text = ""
         txtDisplay.Text = "0"
         valorMemoria = Nothing
         valorNovo = 0
