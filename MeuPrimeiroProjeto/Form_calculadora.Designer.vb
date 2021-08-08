@@ -50,23 +50,23 @@ Partial Class Form_calculadora
         '
         'btnCalcular
         '
-        Me.btnCalcular.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_símbolo_igual_64
+        Me.btnCalcular.BackgroundImage = CType(resources.GetObject("btnCalcular.BackgroundImage"), System.Drawing.Image)
         Me.btnCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnCalcular.FlatAppearance.BorderSize = 0
         Me.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCalcular.Location = New System.Drawing.Point(205, 198)
+        Me.btnCalcular.Location = New System.Drawing.Point(208, 190)
         Me.btnCalcular.Name = "btnCalcular"
-        Me.btnCalcular.Size = New System.Drawing.Size(47, 41)
+        Me.btnCalcular.Size = New System.Drawing.Size(40, 41)
         Me.btnCalcular.TabIndex = 0
         Me.btnCalcular.UseVisualStyleBackColor = True
         '
         'btnSubtrair
         '
-        Me.btnSubtrair.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.SubtrairMouseLeave
+        Me.btnSubtrair.BackgroundImage = CType(resources.GetObject("btnSubtrair.BackgroundImage"), System.Drawing.Image)
         Me.btnSubtrair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSubtrair.FlatAppearance.BorderSize = 0
         Me.btnSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSubtrair.Location = New System.Drawing.Point(208, 122)
+        Me.btnSubtrair.Location = New System.Drawing.Point(208, 112)
         Me.btnSubtrair.Name = "btnSubtrair"
         Me.btnSubtrair.Size = New System.Drawing.Size(40, 40)
         Me.btnSubtrair.TabIndex = 2
@@ -74,11 +74,11 @@ Partial Class Form_calculadora
         '
         'btnDividir
         '
-        Me.btnDividir.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.DividirMouseLeave
+        Me.btnDividir.BackgroundImage = CType(resources.GetObject("btnDividir.BackgroundImage"), System.Drawing.Image)
         Me.btnDividir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDividir.FlatAppearance.BorderSize = 0
         Me.btnDividir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDividir.Location = New System.Drawing.Point(208, 48)
+        Me.btnDividir.Location = New System.Drawing.Point(208, 37)
         Me.btnDividir.Name = "btnDividir"
         Me.btnDividir.Size = New System.Drawing.Size(40, 40)
         Me.btnDividir.TabIndex = 3
@@ -86,11 +86,11 @@ Partial Class Form_calculadora
         '
         'btnMultiplicar
         '
-        Me.btnMultiplicar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.MultiplicarMouseLeave
+        Me.btnMultiplicar.BackgroundImage = CType(resources.GetObject("btnMultiplicar.BackgroundImage"), System.Drawing.Image)
         Me.btnMultiplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnMultiplicar.FlatAppearance.BorderSize = 0
         Me.btnMultiplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMultiplicar.Location = New System.Drawing.Point(208, 85)
+        Me.btnMultiplicar.Location = New System.Drawing.Point(208, 74)
         Me.btnMultiplicar.Name = "btnMultiplicar"
         Me.btnMultiplicar.Size = New System.Drawing.Size(40, 40)
         Me.btnMultiplicar.TabIndex = 4
@@ -98,9 +98,10 @@ Partial Class Form_calculadora
         '
         'txtDisplay
         '
-        Me.txtDisplay.BackColor = System.Drawing.Color.White
+        Me.txtDisplay.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.txtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDisplay.Font = New System.Drawing.Font("MS UI Gothic", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtDisplay.ForeColor = System.Drawing.Color.White
         Me.txtDisplay.Location = New System.Drawing.Point(3, 48)
         Me.txtDisplay.MaxLength = 12
         Me.txtDisplay.Multiline = True
@@ -112,7 +113,7 @@ Partial Class Form_calculadora
         '
         'btn1
         '
-        Me.btn1.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64
+        Me.btn1.BackgroundImage = CType(resources.GetObject("btn1.BackgroundImage"), System.Drawing.Image)
         Me.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn1.FlatAppearance.BorderSize = 0
         Me.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -124,7 +125,7 @@ Partial Class Form_calculadora
         '
         'btn2
         '
-        Me.btn2.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__1_
+        Me.btn2.BackgroundImage = CType(resources.GetObject("btn2.BackgroundImage"), System.Drawing.Image)
         Me.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn2.FlatAppearance.BorderSize = 0
         Me.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -136,7 +137,7 @@ Partial Class Form_calculadora
         '
         'btn3
         '
-        Me.btn3.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__2_
+        Me.btn3.BackgroundImage = CType(resources.GetObject("btn3.BackgroundImage"), System.Drawing.Image)
         Me.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn3.FlatAppearance.BorderSize = 0
         Me.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -148,7 +149,7 @@ Partial Class Form_calculadora
         '
         'btn6
         '
-        Me.btn6.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__5_
+        Me.btn6.BackgroundImage = CType(resources.GetObject("btn6.BackgroundImage"), System.Drawing.Image)
         Me.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn6.FlatAppearance.BorderSize = 0
         Me.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -160,7 +161,7 @@ Partial Class Form_calculadora
         '
         'btn5
         '
-        Me.btn5.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__4_
+        Me.btn5.BackgroundImage = CType(resources.GetObject("btn5.BackgroundImage"), System.Drawing.Image)
         Me.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn5.FlatAppearance.BorderSize = 0
         Me.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -172,7 +173,7 @@ Partial Class Form_calculadora
         '
         'btn4
         '
-        Me.btn4.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__3_
+        Me.btn4.BackgroundImage = CType(resources.GetObject("btn4.BackgroundImage"), System.Drawing.Image)
         Me.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn4.FlatAppearance.BorderSize = 0
         Me.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -184,7 +185,7 @@ Partial Class Form_calculadora
         '
         'btn9
         '
-        Me.btn9.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__8_
+        Me.btn9.BackgroundImage = CType(resources.GetObject("btn9.BackgroundImage"), System.Drawing.Image)
         Me.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn9.FlatAppearance.BorderSize = 0
         Me.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -196,7 +197,7 @@ Partial Class Form_calculadora
         '
         'btn8
         '
-        Me.btn8.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__7_
+        Me.btn8.BackgroundImage = CType(resources.GetObject("btn8.BackgroundImage"), System.Drawing.Image)
         Me.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn8.FlatAppearance.BorderSize = 0
         Me.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -208,7 +209,7 @@ Partial Class Form_calculadora
         '
         'btn7
         '
-        Me.btn7.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__6_
+        Me.btn7.BackgroundImage = CType(resources.GetObject("btn7.BackgroundImage"), System.Drawing.Image)
         Me.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn7.FlatAppearance.BorderSize = 0
         Me.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -220,7 +221,7 @@ Partial Class Form_calculadora
         '
         'btn0
         '
-        Me.btn0.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_3_64__9_
+        Me.btn0.BackgroundImage = CType(resources.GetObject("btn0.BackgroundImage"), System.Drawing.Image)
         Me.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn0.FlatAppearance.BorderSize = 0
         Me.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -232,19 +233,19 @@ Partial Class Form_calculadora
         '
         'btnApagar
         '
-        Me.btnApagar.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.icons8_cancelar_o_último_dígito2
+        Me.btnApagar.BackgroundImage = CType(resources.GetObject("btnApagar.BackgroundImage"), System.Drawing.Image)
         Me.btnApagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnApagar.FlatAppearance.BorderSize = 0
         Me.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnApagar.Location = New System.Drawing.Point(205, 3)
+        Me.btnApagar.Location = New System.Drawing.Point(208, 3)
         Me.btnApagar.Name = "btnApagar"
-        Me.btnApagar.Size = New System.Drawing.Size(47, 50)
+        Me.btnApagar.Size = New System.Drawing.Size(37, 40)
         Me.btnApagar.TabIndex = 16
         Me.btnApagar.UseVisualStyleBackColor = True
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.Panel1.Controls.Add(Me.txtOperacoes)
         Me.Panel1.Controls.Add(Me.txtDisplay)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -255,25 +256,26 @@ Partial Class Form_calculadora
         '
         'txtOperacoes
         '
-        Me.txtOperacoes.BackColor = System.Drawing.Color.White
+        Me.txtOperacoes.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.txtOperacoes.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtOperacoes.Font = New System.Drawing.Font("MS UI Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtOperacoes.Location = New System.Drawing.Point(3, 4)
+        Me.txtOperacoes.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtOperacoes.ForeColor = System.Drawing.Color.Gray
+        Me.txtOperacoes.Location = New System.Drawing.Point(3, 12)
         Me.txtOperacoes.MaxLength = 12
         Me.txtOperacoes.Multiline = True
         Me.txtOperacoes.Name = "txtOperacoes"
         Me.txtOperacoes.ReadOnly = True
-        Me.txtOperacoes.Size = New System.Drawing.Size(254, 41)
+        Me.txtOperacoes.Size = New System.Drawing.Size(254, 33)
         Me.txtOperacoes.TabIndex = 6
         Me.txtOperacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btnSoma
         '
-        Me.btnSoma.BackgroundImage = Global.MeuPrimeiroProjeto.My.Resources.Resources.SomaMouseLeave
+        Me.btnSoma.BackgroundImage = CType(resources.GetObject("btnSoma.BackgroundImage"), System.Drawing.Image)
         Me.btnSoma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSoma.FlatAppearance.BorderSize = 0
         Me.btnSoma.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSoma.Location = New System.Drawing.Point(208, 162)
+        Me.btnSoma.Location = New System.Drawing.Point(208, 151)
         Me.btnSoma.Name = "btnSoma"
         Me.btnSoma.Size = New System.Drawing.Size(40, 40)
         Me.btnSoma.TabIndex = 18
@@ -285,7 +287,7 @@ Partial Class Form_calculadora
         Me.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnClean.FlatAppearance.BorderSize = 0
         Me.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClean.Location = New System.Drawing.Point(14, 245)
+        Me.btnClean.Location = New System.Drawing.Point(13, 248)
         Me.btnClean.Name = "btnClean"
         Me.btnClean.Size = New System.Drawing.Size(58, 58)
         Me.btnClean.TabIndex = 19
@@ -293,6 +295,7 @@ Partial Class Form_calculadora
         '
         'pnlTeclado
         '
+        Me.pnlTeclado.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.pnlTeclado.Controls.Add(Me.btn2)
         Me.pnlTeclado.Controls.Add(Me.btnCalcular)
         Me.pnlTeclado.Controls.Add(Me.btnSoma)
@@ -309,7 +312,7 @@ Partial Class Form_calculadora
         Me.pnlTeclado.Controls.Add(Me.btn7)
         Me.pnlTeclado.Controls.Add(Me.btn5)
         Me.pnlTeclado.Controls.Add(Me.btn6)
-        Me.pnlTeclado.Location = New System.Drawing.Point(3, 83)
+        Me.pnlTeclado.Location = New System.Drawing.Point(1, 86)
         Me.pnlTeclado.Name = "pnlTeclado"
         Me.pnlTeclado.Size = New System.Drawing.Size(261, 232)
         Me.pnlTeclado.TabIndex = 20
@@ -318,7 +321,7 @@ Partial Class Form_calculadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Thistle
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(260, 319)
         Me.Controls.Add(Me.btnClean)
         Me.Controls.Add(Me.Panel1)

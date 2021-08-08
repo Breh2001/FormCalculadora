@@ -11,6 +11,7 @@ Public Class Form_calculadora
     Dim valorNovo As Long
 
     Dim Concatena As Boolean
+    'Se False -> número não fica ao lado do outro | Se True -> número ao lado do outro
 
     Dim operador As String
 
@@ -29,6 +30,7 @@ Public Class Form_calculadora
 
     Private Sub AdicionarNumDisplay(numero As String)
 
+        'If Concatena = False Or txtDisplay.Text.Equals("0") Then txtDisplay.Clear()
         If Concatena = False Or txtDisplay.Text.Equals("0") Then txtDisplay.Clear()
 
         If txtDisplay.Text.Length < 12 Then
@@ -40,41 +42,41 @@ Public Class Form_calculadora
 
 #Region "Set BackgroundImage botões"
 
-    Private Sub SetBackGroundImageBtn(sender As Object, nomeEvento As String)
+    'Private Sub SetBackGroundImageBtn(sender As Object, nomeEvento As String)
 
-        Try
+    '    Try
 
-            Dim nomeImagem = sender.name.ToString().Substring(3) + nomeEvento
-            Debug.WriteLine(nomeImagem)
-            Dim imagem = My.Resources.ResourceManager.GetObject(nomeImagem)
-            If Not IsNothing(imagem) Then
-                sender.BackgroundImage = imagem
-            End If
+    '        Dim nomeImagem = sender.name.ToString().Substring(3) + nomeEvento
+    '        Debug.WriteLine(nomeImagem)
+    '        Dim imagem = My.Resources.ResourceManager.GetObject(nomeImagem)
+    '        If Not IsNothing(imagem) Then
+    '            sender.BackgroundImage = imagem
+    '        End If
 
-        Catch ex As Exception
-            Return
-        End Try
+    '    Catch ex As Exception
+    '        Return
+    '    End Try
 
-    End Sub
+    'End Sub
 
 
-    Private Sub btnsOperacoes_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnMultiplicar.MouseLeave, btnDividir.MouseLeave, btnSubtrair.MouseLeave
+    'Private Sub btnsOperacoes_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnMultiplicar.MouseLeave, btnDividir.MouseLeave, btnSubtrair.MouseLeave
 
-        SetBackGroundImageBtn(sender, nomeEvento:="MouseLeave")
+    '    SetBackGroundImageBtn(sender, nomeEvento:="MouseLeave")
 
-    End Sub
+    'End Sub
 
-    Private Sub btnsOperacoes_MouseHover(sender As Object, e As EventArgs) Handles btnSoma.MouseHover, btnMultiplicar.MouseHover, btnDividir.MouseHover, btnSubtrair.MouseHover, btnSoma.MouseUp, btnMultiplicar.MouseUp, btnDividir.MouseUp, btnSubtrair.MouseUp
+    'Private Sub btnsOperacoes_MouseHover(sender As Object, e As EventArgs) Handles btnSoma.MouseHover, btnMultiplicar.MouseHover, btnDividir.MouseHover, btnSubtrair.MouseHover, btnSoma.MouseUp, btnMultiplicar.MouseUp, btnDividir.MouseUp, btnSubtrair.MouseUp
 
-        SetBackGroundImageBtn(sender, nomeEvento:="MouseHoverUp")
+    '    SetBackGroundImageBtn(sender, nomeEvento:="MouseHoverUp")
 
-    End Sub
+    'End Sub
 
-    Private Sub btnsOperacoes_MouseDown(sender As Object, e As EventArgs) Handles btnSoma.MouseDown, btnMultiplicar.MouseDown, btnDividir.MouseDown, btnSubtrair.MouseDown
+    'Private Sub btnsOperacoes_MouseDown(sender As Object, e As EventArgs) Handles btnSoma.MouseDown, btnMultiplicar.MouseDown, btnDividir.MouseDown, btnSubtrair.MouseDown
 
-        SetBackGroundImageBtn(sender, nomeEvento:="MouseDown")
+    '    SetBackGroundImageBtn(sender, nomeEvento:="MouseDown")
 
-    End Sub
+    'End Sub
 
 #End Region
 
