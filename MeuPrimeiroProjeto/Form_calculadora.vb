@@ -7,13 +7,16 @@ Public Class Form_calculadora
     'Dim valor1 As Long
     'Dim valor2 As Long
 
-    Dim valorMemoria As Long?
-    Dim valorNovo As Long
+    Dim valorMemoria As Decimal?
+    Dim valorNovo As Decimal
 
     Dim Concatena As Boolean
     'Se False -> número não fica ao lado do outro | Se True -> número ao lado do outro
 
     Dim operador As String
+    Dim operadorMemoria As String
+
+    Dim TemVirgula As Boolean = False
 
     'Cint () -> converter para inteiro
 
@@ -30,7 +33,6 @@ Public Class Form_calculadora
 
     Private Sub AdicionarNumDisplay(numero As String)
 
-        'If Concatena = False Or txtDisplay.Text.Equals("0") Then txtDisplay.Clear()
         If Concatena = False Or txtDisplay.Text.Equals("0") Then txtDisplay.Clear()
 
         If txtDisplay.Text.Length < 12 Then
@@ -82,7 +84,8 @@ Public Class Form_calculadora
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
-        Calcular("=")
+        OperacaoMatematica("=")
+        'txtDisplay.Text = valorMemoria
 
     End Sub
 
@@ -91,7 +94,6 @@ Public Class Form_calculadora
         If String.IsNullOrEmpty(txtDisplay.Text) Then Return
 
         valorNovo = txtDisplay.Text
-
         Calcular(operador, valorNovo)
 
         'txtDisplay.SelectAll()
@@ -103,49 +105,53 @@ Public Class Form_calculadora
     Private Sub Calcular(operador As String, Optional valorNovo As String = "")
 
         Concatena = False
+        TemVirgula = False
 
         txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
 
         If IsNothing(valorMemoria) Then
             valorMemoria = valorNovo
-        Else
-
-            Select Case operador
-
-                Case "+"
-
-                    valorMemoria += valorNovo
-
-                Case "-"
-
-                    valorMemoria -= valorNovo
-
-                Case "*"
-
-                    valorMemoria *= valorNovo
-
-                Case "/"
-
-                    Try
-
-                        valorMemoria /= valorNovo
-
-                    Catch ex As DivideByZeroException
-
-                        txtOperacoes.Text = ""
-                        txtDisplay.Font = New Font("Arial", 12)
-
-                        txtDisplay.Text = "Não é possível dividir por zero"
-                        DesabilitarTeclado()
-                        Exit Sub
-
-                    End Try
-
-            End Select
-
+            operadorMemoria = operador
+            Exit Sub
         End If
 
+        Select Case operadorMemoria
+
+            Case "+"
+                valorMemoria += valorNovo
+
+            Case "-"
+                valorMemoria -= valorNovo
+
+            Case "*"
+                valorMemoria *= valorNovo
+
+            Case "/"
+                If valorNovo = "0" Then
+                    txtOperacoes.Text = ""
+                    txtDisplay.Font = New Font("Arial", 13)
+                    txtDisplay.Text = "Não é possível dividir por zero"
+                    DesabilitarTeclado()
+                    Exit Sub
+                End If
+
+                valorMemoria /= valorNovo
+
+        End Select
+
+        operadorMemoria = operador
+
         txtDisplay.Text = valorMemoria
+
+        If operador = "=" Then
+
+            operadorMemoria = String.Empty
+
+            valorMemoria = Nothing
+
+            'TemVirgula = txtDisplay.Text.Contains(",")
+
+        End If
 
     End Sub
 
@@ -173,14 +179,13 @@ Public Class Form_calculadora
 
     End Sub
 
-
-
     Private Sub Apagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
 
         Dim valorAtual = txtDisplay.Text
         'Substring remove a utilima posição
         'E atualiza a txtDisplay
         txtDisplay.Text = valorAtual.Substring(0, valorAtual.Length() - 1)
+        TemVirgula = txtDisplay.Text.Contains(",")
 
     End Sub
 
@@ -212,9 +217,22 @@ Public Class Form_calculadora
         txtOperacoes.Text = ""
         txtDisplay.Text = "0"
         valorMemoria = Nothing
-        valorNovo = 0
+        valorNovo = Nothing
         Concatena = True
+        TemVirgula = False
         HabilitarTeclado()
+
+    End Sub
+
+    Private Sub btnVirgula_Click(sender As Object, e As EventArgs) Handles btnVirgula.Click
+
+        If txtDisplay.Text.Length = 0 Then Return
+        If Not TemVirgula Then
+
+            txtDisplay.Text = txtDisplay.Text + ","
+            TemVirgula = True
+
+        End If
 
     End Sub
 
@@ -253,6 +271,8 @@ Public Class Form_calculadora
                 btn9.PerformClick()
             Case Keys.D0, Keys.NumPad0
                 btn0.PerformClick()
+            Case Keys.Decimal
+                btnVirgula.PerformClick()
         End Select
 
     End Sub
@@ -264,19 +284,5 @@ Public Class Form_calculadora
         valorMemoria = Nothing
 
     End Sub
-
-    '--------------colocar função ao sinal de Mais---------------
-
-    'armazenar o valor já inserido no txtDisplay
-
-    'adicionar o + no txtDisplay
-
-    'armazenar o segundo valor inserido no txtDisplay
-
-    'somar os dois valores
-
-    'apagar o texto do txtDisplay
-
-    'colocar o valor calculado no txtDisplay
 
 End Class

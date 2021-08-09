@@ -44,6 +44,7 @@ Partial Class Form_calculadora
         Me.btnSoma = New System.Windows.Forms.Button()
         Me.btnClean = New System.Windows.Forms.Button()
         Me.pnlTeclado = New System.Windows.Forms.Panel()
+        Me.btnVirgula = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.pnlTeclado.SuspendLayout()
         Me.SuspendLayout()
@@ -258,7 +259,7 @@ Partial Class Form_calculadora
         '
         Me.txtOperacoes.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.txtOperacoes.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtOperacoes.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtOperacoes.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtOperacoes.ForeColor = System.Drawing.Color.Gray
         Me.txtOperacoes.Location = New System.Drawing.Point(3, 12)
         Me.txtOperacoes.MaxLength = 12
@@ -296,6 +297,7 @@ Partial Class Form_calculadora
         'pnlTeclado
         '
         Me.pnlTeclado.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        Me.pnlTeclado.Controls.Add(Me.btnVirgula)
         Me.pnlTeclado.Controls.Add(Me.btn2)
         Me.pnlTeclado.Controls.Add(Me.btnCalcular)
         Me.pnlTeclado.Controls.Add(Me.btnSoma)
@@ -317,6 +319,18 @@ Partial Class Form_calculadora
         Me.pnlTeclado.Size = New System.Drawing.Size(261, 232)
         Me.pnlTeclado.TabIndex = 20
         '
+        'btnVirgula
+        '
+        Me.btnVirgula.BackgroundImage = CType(resources.GetObject("btnVirgula.BackgroundImage"), System.Drawing.Image)
+        Me.btnVirgula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnVirgula.FlatAppearance.BorderSize = 0
+        Me.btnVirgula.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVirgula.Location = New System.Drawing.Point(139, 162)
+        Me.btnVirgula.Name = "btnVirgula"
+        Me.btnVirgula.Size = New System.Drawing.Size(58, 58)
+        Me.btnVirgula.TabIndex = 19
+        Me.btnVirgula.UseVisualStyleBackColor = True
+        '
         'Form_calculadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -326,12 +340,13 @@ Partial Class Form_calculadora
         Me.Controls.Add(Me.btnClean)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pnlTeclado)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
         Me.MaximumSize = New System.Drawing.Size(276, 358)
         Me.MinimumSize = New System.Drawing.Size(276, 358)
         Me.Name = "Form_calculadora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form_calculadora"
+        Me.Text = "Calculadora"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.pnlTeclado.ResumeLayout(False)
@@ -361,4 +376,5 @@ Partial Class Form_calculadora
     Friend WithEvents btnClean As Button
     Friend WithEvents pnlTeclado As Panel
     Friend WithEvents txtOperacoes As TextBox
+    Friend WithEvents btnVirgula As Button
 End Class
