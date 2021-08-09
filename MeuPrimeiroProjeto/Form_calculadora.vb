@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Imports System.Reflection
+'Imports System.Reflection
 
 Public Class Form_calculadora
     Private Const V As String = ""
@@ -82,7 +82,7 @@ Public Class Form_calculadora
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
-        Calcular(0, "=")
+        Calcular("=")
 
     End Sub
 
@@ -92,19 +92,19 @@ Public Class Form_calculadora
 
         valorNovo = txtDisplay.Text
 
-        Calcular(valorNovo, operador)
+        Calcular(operador, valorNovo)
 
         'txtDisplay.SelectAll()
 
-        ' lblExpressao.Text = valorNovo.ToString + operador
+        'txtlblExpressao.Text = valorNovo.ToString + operador
 
     End Sub
 
-    Private Sub Calcular(valorNovo As Decimal, operador As String)
+    Private Sub Calcular(operador As String, Optional valorNovo As String = "")
 
         Concatena = False
 
-        txtOperacoes.Text = txtOperacoes.Text + valorNovo.ToString + operador
+        txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
 
         If IsNothing(valorMemoria) Then
             valorMemoria = valorNovo
@@ -260,8 +260,6 @@ Public Class Form_calculadora
     Private Sub Form_calculadora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Concatena = True
-
-        KeyPreview = True
 
         valorMemoria = Nothing
 
