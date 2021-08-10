@@ -17,6 +17,8 @@ Public Class Form_calculadora
     Dim operadorMemoria As String
 
     Dim TemVirgula As Boolean = False
+    Dim operadorPressionado As Boolean = False
+    Dim apagarPressionado As Boolean = False
 
     'Cint () -> converter para inteiro
 
@@ -92,7 +94,6 @@ Public Class Form_calculadora
     Private Sub OperacaoMatematica(operador As String)
 
         If String.IsNullOrEmpty(txtDisplay.Text) Then Return
-
         valorNovo = txtDisplay.Text
         Calcular(operador, valorNovo)
 
@@ -104,8 +105,15 @@ Public Class Form_calculadora
 
     Private Sub Calcular(operador As String, Optional valorNovo As String = "")
 
+        If apagarPressionado Or Not String.IsNullOrEmpty(txtDisplay.Text) Then
+            If operadorPressionado Then
+                valorNovo = txtDisplay.Text
+                operadorPressionado = False
+            End If
+        End If
+
         Concatena = False
-        TemVirgula = False
+        'TemVirgula = False
 
         txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
 
@@ -140,6 +148,8 @@ Public Class Form_calculadora
         End Select
 
         operadorMemoria = operador
+        operadorPressionado = True
+        apagarPressionado = False
 
         txtDisplay.Text = valorMemoria
 
@@ -186,6 +196,8 @@ Public Class Form_calculadora
         'E atualiza a txtDisplay
         txtDisplay.Text = valorAtual.Substring(0, valorAtual.Length() - 1)
         TemVirgula = txtDisplay.Text.Contains(",")
+        apagarPressionado = True
+        Concatena = True
 
     End Sub
 
@@ -226,7 +238,13 @@ Public Class Form_calculadora
 
     Private Sub btnVirgula_Click(sender As Object, e As EventArgs) Handles btnVirgula.Click
 
-        If txtDisplay.Text.Length = 0 Then Return
+        If txtDisplay.Text.Length = 0 Then
+
+            txtDisplay.Text = "0,"
+            Return
+
+        End If
+        TemVirgula = txtDisplay.Text.Contains(",")
         If Not TemVirgula Then
 
             txtDisplay.Text = txtDisplay.Text + ","
