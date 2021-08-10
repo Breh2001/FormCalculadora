@@ -19,6 +19,7 @@ Public Class Form_calculadora
     Dim TemVirgula As Boolean = False
     Dim operadorPressionado As Boolean = False
     Dim apagarPressionado As Boolean = False
+    Dim TemSinalIgual As Boolean = False
 
     'Cint () -> converter para inteiro
 
@@ -87,6 +88,7 @@ Public Class Form_calculadora
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
         OperacaoMatematica("=")
+        TemSinalIgual = True
         'txtDisplay.Text = valorMemoria
 
     End Sub
@@ -115,7 +117,15 @@ Public Class Form_calculadora
         Concatena = False
         'TemVirgula = False
 
-        txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
+        If TemSinalIgual = False Then
+            txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
+        Else
+            txtOperacoes.Text = ""
+            valorNovo = txtDisplay.Text
+            valorMemoria = Nothing
+            txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
+            TemSinalIgual = False
+        End If
 
         If IsNothing(valorMemoria) Then
             valorMemoria = valorNovo
@@ -249,6 +259,7 @@ Public Class Form_calculadora
 
             txtDisplay.Text = txtDisplay.Text + ","
             TemVirgula = True
+            Concatena = True
 
         End If
 
