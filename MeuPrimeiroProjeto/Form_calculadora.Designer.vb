@@ -36,7 +36,8 @@ Partial Class Form_calculadora
         Me.btn7 = New System.Windows.Forms.Button()
         Me.btn0 = New System.Windows.Forms.Button()
         Me.btnApagar = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlDisplay = New System.Windows.Forms.Panel()
+        Me.chkModoDark = New System.Windows.Forms.CheckBox()
         Me.txtOperacoes = New System.Windows.Forms.TextBox()
         Me.btnSoma = New System.Windows.Forms.Button()
         Me.btnClean = New System.Windows.Forms.Button()
@@ -45,7 +46,7 @@ Partial Class Form_calculadora
         Me.btn1 = New System.Windows.Forms.Button()
         Me.btn3 = New System.Windows.Forms.Button()
         Me.btnVirgula = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
+        Me.pnlDisplay.SuspendLayout()
         Me.pnlTeclado.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -208,16 +209,28 @@ Partial Class Form_calculadora
         Me.btnApagar.TabIndex = 16
         Me.btnApagar.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'pnlDisplay
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.txtOperacoes)
-        Me.Panel1.Controls.Add(Me.txtDisplay)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(260, 90)
-        Me.Panel1.TabIndex = 17
+        Me.pnlDisplay.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
+        Me.pnlDisplay.Controls.Add(Me.chkModoDark)
+        Me.pnlDisplay.Controls.Add(Me.txtOperacoes)
+        Me.pnlDisplay.Controls.Add(Me.txtDisplay)
+        Me.pnlDisplay.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlDisplay.Location = New System.Drawing.Point(0, 0)
+        Me.pnlDisplay.Name = "pnlDisplay"
+        Me.pnlDisplay.Size = New System.Drawing.Size(260, 90)
+        Me.pnlDisplay.TabIndex = 17
+        '
+        'chkModoDark
+        '
+        Me.chkModoDark.AutoSize = True
+        Me.chkModoDark.Checked = True
+        Me.chkModoDark.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkModoDark.Location = New System.Drawing.Point(4, 4)
+        Me.chkModoDark.Name = "chkModoDark"
+        Me.chkModoDark.Size = New System.Drawing.Size(15, 14)
+        Me.chkModoDark.TabIndex = 7
+        Me.chkModoDark.UseVisualStyleBackColor = True
         '
         'txtOperacoes
         '
@@ -252,7 +265,7 @@ Partial Class Form_calculadora
         Me.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnClean.FlatAppearance.BorderSize = 0
         Me.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClean.Location = New System.Drawing.Point(14, 173)
+        Me.btnClean.Location = New System.Drawing.Point(12, 265)
         Me.btnClean.Name = "btnClean"
         Me.btnClean.Size = New System.Drawing.Size(58, 58)
         Me.btnClean.TabIndex = 19
@@ -261,7 +274,6 @@ Partial Class Form_calculadora
         'pnlTeclado
         '
         Me.pnlTeclado.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
-        Me.pnlTeclado.Controls.Add(Me.btnClean)
         Me.pnlTeclado.Controls.Add(Me.btn2)
         Me.pnlTeclado.Controls.Add(Me.btn1)
         Me.pnlTeclado.Controls.Add(Me.btn3)
@@ -279,7 +291,7 @@ Partial Class Form_calculadora
         Me.pnlTeclado.Controls.Add(Me.btn7)
         Me.pnlTeclado.Controls.Add(Me.btn5)
         Me.pnlTeclado.Controls.Add(Me.btn6)
-        Me.pnlTeclado.Location = New System.Drawing.Point(1, 86)
+        Me.pnlTeclado.Location = New System.Drawing.Point(-2, 92)
         Me.pnlTeclado.Name = "pnlTeclado"
         Me.pnlTeclado.Size = New System.Drawing.Size(261, 235)
         Me.pnlTeclado.TabIndex = 20
@@ -338,8 +350,9 @@ Partial Class Form_calculadora
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(260, 322)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.btnClean)
         Me.Controls.Add(Me.pnlTeclado)
+        Me.Controls.Add(Me.pnlDisplay)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
@@ -348,8 +361,8 @@ Partial Class Form_calculadora
         Me.Name = "Form_calculadora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Calculadora"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.pnlDisplay.ResumeLayout(False)
+        Me.pnlDisplay.PerformLayout()
         Me.pnlTeclado.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -368,7 +381,7 @@ Partial Class Form_calculadora
     Friend WithEvents btn7 As Button
     Friend WithEvents btn0 As Button
     Friend WithEvents btnApagar As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlDisplay As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents btnSoma As Button
     Friend WithEvents btnClean As Button
@@ -378,4 +391,5 @@ Partial Class Form_calculadora
     Friend WithEvents btn2 As Button
     Friend WithEvents btn1 As Button
     Friend WithEvents btn3 As Button
+    Friend WithEvents chkModoDark As CheckBox
 End Class

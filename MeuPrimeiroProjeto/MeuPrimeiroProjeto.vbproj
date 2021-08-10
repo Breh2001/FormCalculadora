@@ -6,6 +6,7 @@
     <RootNamespace>MeuPrimeiroProjeto</RootNamespace>
     <StartupObject>MeuPrimeiroProjeto.Form_calculadora</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Icone_Calculadora.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

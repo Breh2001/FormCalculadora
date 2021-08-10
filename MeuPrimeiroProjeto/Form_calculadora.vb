@@ -4,6 +4,9 @@
 Public Class Form_calculadora
     Private Const V As String = ""
 
+    Private BackColorDark = Color.FromArgb(255, 25, 25, 25)
+    Private BackColorLight = Color.White
+
     'Dim valor1 As Long
     'Dim valor2 As Long
 
@@ -312,6 +315,29 @@ Public Class Form_calculadora
 
         valorMemoria = Nothing
 
+
+
     End Sub
 
+    Private Sub chkModoDark_CheckedChanged(sender As Object, e As EventArgs) Handles chkModoDark.CheckedChanged
+
+        If chkModoDark.Checked Then
+            Me.BackColor = BackColorDark
+            pnlTeclado.BackColor = BackColorDark
+            txtDisplay.BackColor = BackColorDark
+            txtDisplay.ForeColor = BackColorLight
+            txtOperacoes.BackColor = BackColorDark
+            txtOperacoes.ForeColor = Color.Gainsboro
+            pnlDisplay.BackColor = BackColorDark
+        Else
+            Me.BackColor = BackColorLight
+            pnlTeclado.BackColor = BackColorLight
+            txtDisplay.BackColor = BackColorLight
+            txtDisplay.ForeColor = Color.Black
+            txtOperacoes.BackColor = BackColorLight
+            txtOperacoes.ForeColor = BackColorDark
+            pnlDisplay.BackColor = BackColorLight
+        End If
+
+    End Sub
 End Class
