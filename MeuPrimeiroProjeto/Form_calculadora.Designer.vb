@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form_calculadora
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form_calculadora
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_calculadora))
         Me.btnCalcular = New System.Windows.Forms.Button()
@@ -37,7 +37,6 @@ Partial Class Form_calculadora
         Me.btn0 = New System.Windows.Forms.Button()
         Me.btnApagar = New System.Windows.Forms.Button()
         Me.pnlDisplay = New System.Windows.Forms.Panel()
-        Me.chkModoDark = New System.Windows.Forms.CheckBox()
         Me.txtOperacoes = New System.Windows.Forms.TextBox()
         Me.btnSoma = New System.Windows.Forms.Button()
         Me.btnClean = New System.Windows.Forms.Button()
@@ -212,7 +211,6 @@ Partial Class Form_calculadora
         'pnlDisplay
         '
         Me.pnlDisplay.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
-        Me.pnlDisplay.Controls.Add(Me.chkModoDark)
         Me.pnlDisplay.Controls.Add(Me.txtOperacoes)
         Me.pnlDisplay.Controls.Add(Me.txtDisplay)
         Me.pnlDisplay.Dock = System.Windows.Forms.DockStyle.Top
@@ -220,17 +218,6 @@ Partial Class Form_calculadora
         Me.pnlDisplay.Name = "pnlDisplay"
         Me.pnlDisplay.Size = New System.Drawing.Size(260, 90)
         Me.pnlDisplay.TabIndex = 17
-        '
-        'chkModoDark
-        '
-        Me.chkModoDark.AutoSize = True
-        Me.chkModoDark.Checked = True
-        Me.chkModoDark.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkModoDark.Location = New System.Drawing.Point(4, 4)
-        Me.chkModoDark.Name = "chkModoDark"
-        Me.chkModoDark.Size = New System.Drawing.Size(15, 14)
-        Me.chkModoDark.TabIndex = 7
-        Me.chkModoDark.UseVisualStyleBackColor = True
         '
         'txtOperacoes
         '
@@ -391,5 +378,4 @@ Partial Class Form_calculadora
     Friend WithEvents btn2 As Button
     Friend WithEvents btn1 As Button
     Friend WithEvents btn3 As Button
-    Friend WithEvents chkModoDark As CheckBox
 End Class

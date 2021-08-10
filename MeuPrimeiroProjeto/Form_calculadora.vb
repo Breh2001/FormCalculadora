@@ -1,11 +1,19 @@
 ﻿Imports System.Data.OleDb
-'Imports System.Reflection
+Imports System.Drawing
+Imports System.Drawing.Drawing2D
+Imports System.ComponentModel
 
 Public Class Form_calculadora
     Private Const V As String = ""
 
     Private BackColorDark = Color.FromArgb(255, 25, 25, 25)
     Private BackColorLight = Color.White
+
+    Private OnBackColor = Color.White
+    Private OnToggleColor = Color.White
+    Private OffBackColor = Color.FromArgb(255, 25, 25, 25)
+    Private OffToggleColor = Color.FromArgb(255, 25, 25, 25)
+
 
     'Dim valor1 As Long
     'Dim valor2 As Long
@@ -319,25 +327,71 @@ Public Class Form_calculadora
 
     End Sub
 
-    Private Sub chkModoDark_CheckedChanged(sender As Object, e As EventArgs) Handles chkModoDark.CheckedChanged
+    'Private Sub chkModoLight_CheckedChanged(sender As Object, e As EventArgs)chkModoLight.Checked
 
-        If chkModoDark.Checked Then
-            Me.BackColor = BackColorDark
-            pnlTeclado.BackColor = BackColorDark
-            txtDisplay.BackColor = BackColorDark
-            txtDisplay.ForeColor = BackColorLight
-            txtOperacoes.BackColor = BackColorDark
-            txtOperacoes.ForeColor = Color.Gainsboro
-            pnlDisplay.BackColor = BackColorDark
-        Else
-            Me.BackColor = BackColorLight
-            pnlTeclado.BackColor = BackColorLight
-            txtDisplay.BackColor = BackColorLight
-            txtDisplay.ForeColor = Color.Black
-            txtOperacoes.BackColor = BackColorLight
-            txtOperacoes.ForeColor = BackColorDark
-            pnlDisplay.BackColor = BackColorLight
-        End If
+    '    Me.MinimumSize = New Size(45, 22)
 
-    End Sub
+
+    'If chkModoDark.Checked Then
+    '    Me.BackColor = BackColorDark
+    '    pnlTeclado.BackColor = BackColorDark
+    '    txtDisplay.BackColor = BackColorDark
+    '    txtDisplay.ForeColor = BackColorLight
+    '    txtOperacoes.BackColor = BackColorDark
+    '    txtOperacoes.ForeColor = Color.Gainsboro
+    '    pnlDisplay.BackColor = BackColorDark
+    'Else
+    '    Me.BackColor = BackColorLight
+    '    pnlTeclado.BackColor = BackColorLight
+    '    txtDisplay.BackColor = BackColorLight
+    '    txtDisplay.ForeColor = Color.Black
+    ''    txtOperacoes.BackColor = BackColorLight
+    ''    txtOperacoes.ForeColor = BackColorDark
+    ''    pnlDisplay.BackColor = BackColorLight
+    ''End If
+
+    'End Sub
+
+    'Private Function GetFigurePath() As GraphicsPath
+
+    '    Dim arcSize As Integer = Me.Height - 1
+
+    '    Dim leftarc As Rectangle = New Rectangle(0, 0, arcSize, arcSize)
+    '    Dim rightarc As Rectangle = New Rectangle(Me.Width - arcSize - 2, 0, arcSize, arcSize)
+
+    '    Dim path As GraphicsPath = New GraphicsPath()
+    '    path.StartFigure()
+    '    path.AddArc(leftarc, 90, 180)
+    '    path.AddArc(rightarc, 270, 180)
+    '    path.CloseFigure()
+
+    '    Return path
+    'End Function
+
+    ''Private OnPaint As Override
+
+    'Protected Sub OnPaint(ByVal prevent As PaintEventArgs)
+
+    '    Dim toggleSize As Integer = Me.Height - 5
+    '    prevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+    '    prevent.Graphics.Clear(Me.Parent.BackColor)
+
+    '    If chkModoLight.Checked Then 'ON
+
+    '        'Desenhando a Superfície de Controle
+    '        prevent.Graphics.FillPath(New SolidBrush(OnBackColor), GetFigurePath())
+    '        'Desenhando o Toggle
+    '        prevent.Graphics.FillEllipse(New SolidBrush(OnToggleColor), New Rectangle(Me.Width - Me.Height + 1, 2, toggleSize, toggleSize))
+
+    '    Else 'OFF
+
+    '        'Desenhando a Superfície de Controle
+    '        prevent.Graphics.FillPath(New SolidBrush(OffBackColor), GetFigurePath())
+    '        'Desenhando o Toggle
+    '        prevent.Graphics.FillEllipse(New SolidBrush(OffToggleColor), New Rectangle(2, 2, toggleSize, toggleSize))
+
+    '    End If
+
+    'End Sub
+
 End Class
