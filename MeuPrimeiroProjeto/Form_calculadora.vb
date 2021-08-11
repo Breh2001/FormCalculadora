@@ -20,6 +20,7 @@ Public Class Form_calculadora
 
     Dim valorMemoria As Decimal?
     Dim valorNovo As Decimal
+    Dim valorNF As Decimal
 
     Dim Concatena As Boolean
     'Se False -> número não fica ao lado do outro | Se True -> número ao lado do outro
@@ -98,11 +99,13 @@ Public Class Form_calculadora
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
-        If valorNovo > 28 Then
-            valorNovo = Format(valorNovo, "Scientific")
-            'TextBox1.Text = Format(b, "Scientific")
-            'Format(12345.6789, “Scientific”) = “1,23E+04”
-        End If
+        'If txtDisplay.Text.Length() > 28 Then
+        '    valorNovo = Format(valorNovo, "Scientific")
+        '    'TextBox1.Text = Format(b, "Scientific")
+        '    'Format(12345.6789, “Scientific”) = “1,23E+04”
+        '    txtDisplay.Text = valorNovo
+        'End If
+
         OperacaoMatematica("=")
         TemSinalIgual = True
         'txtDisplay.Text = valorMemoria
@@ -111,10 +114,8 @@ Public Class Form_calculadora
 
     Private Sub OperacaoMatematica(operador As String)
 
-        If String.IsNullOrEmpty(txtDisplay.Text) Then Return
+        'If String.IsNullOrEmpty(txtDisplay.Text) Then Return
         valorNovo = txtDisplay.Text
-        Calcular(operador, valorNovo)
-
         'txtDisplay.SelectAll()
 
         'txtlblExpressao.Text = valorNovo.ToString + operador
@@ -181,6 +182,14 @@ Public Class Form_calculadora
             apagarPressionado = False
 
             txtDisplay.Text = valorMemoria
+
+            If txtDisplay.Text.Length() > 28 Then
+                valorNF = txtDisplay.Text
+                valorNF = Format(valorNF, "Scientific")
+                'TextBox1.Text = Format(b, "Scientific")
+                'Format(12345.6789, “Scientific”) = “1,23E+04”
+                txtDisplay.Text = valorNF
+            End If
 
             If operador = "=" Then
 
