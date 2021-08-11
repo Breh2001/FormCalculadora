@@ -37,6 +37,7 @@ Partial Class Form_calculadora
         Me.btn0 = New System.Windows.Forms.Button()
         Me.btnApagar = New System.Windows.Forms.Button()
         Me.pnlDisplay = New System.Windows.Forms.Panel()
+        Me.tgcMudarTema = New MeuPrimeiroProjeto.RJToggleButton()
         Me.txtOperacoes = New System.Windows.Forms.TextBox()
         Me.btnSoma = New System.Windows.Forms.Button()
         Me.btnClean = New System.Windows.Forms.Button()
@@ -103,7 +104,7 @@ Partial Class Form_calculadora
         Me.txtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDisplay.Font = New System.Drawing.Font("MS UI Gothic", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtDisplay.ForeColor = System.Drawing.Color.White
-        Me.txtDisplay.Location = New System.Drawing.Point(3, 48)
+        Me.txtDisplay.Location = New System.Drawing.Point(3, 64)
         Me.txtDisplay.MaxLength = 12
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
@@ -211,13 +212,27 @@ Partial Class Form_calculadora
         'pnlDisplay
         '
         Me.pnlDisplay.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
+        Me.pnlDisplay.Controls.Add(Me.tgcMudarTema)
         Me.pnlDisplay.Controls.Add(Me.txtOperacoes)
         Me.pnlDisplay.Controls.Add(Me.txtDisplay)
         Me.pnlDisplay.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlDisplay.Location = New System.Drawing.Point(0, 0)
         Me.pnlDisplay.Name = "pnlDisplay"
-        Me.pnlDisplay.Size = New System.Drawing.Size(260, 90)
+        Me.pnlDisplay.Size = New System.Drawing.Size(260, 110)
         Me.pnlDisplay.TabIndex = 17
+        '
+        'tgcMudarTema
+        '
+        Me.tgcMudarTema.AutoSize = True
+        Me.tgcMudarTema.Checked = True
+        Me.tgcMudarTema.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.tgcMudarTema.Location = New System.Drawing.Point(12, 3)
+        Me.tgcMudarTema.MaximumSize = New System.Drawing.Size(35, 20)
+        Me.tgcMudarTema.MinimumSize = New System.Drawing.Size(35, 20)
+        Me.tgcMudarTema.Name = "tgcMudarTema"
+        Me.tgcMudarTema.Size = New System.Drawing.Size(35, 20)
+        Me.tgcMudarTema.TabIndex = 21
+        Me.tgcMudarTema.UseVisualStyleBackColor = True
         '
         'txtOperacoes
         '
@@ -225,7 +240,7 @@ Partial Class Form_calculadora
         Me.txtOperacoes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtOperacoes.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtOperacoes.ForeColor = System.Drawing.Color.Gainsboro
-        Me.txtOperacoes.Location = New System.Drawing.Point(3, 12)
+        Me.txtOperacoes.Location = New System.Drawing.Point(3, 28)
         Me.txtOperacoes.MaxLength = 12
         Me.txtOperacoes.Multiline = True
         Me.txtOperacoes.Name = "txtOperacoes"
@@ -252,7 +267,7 @@ Partial Class Form_calculadora
         Me.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnClean.FlatAppearance.BorderSize = 0
         Me.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClean.Location = New System.Drawing.Point(12, 265)
+        Me.btnClean.Location = New System.Drawing.Point(12, 281)
         Me.btnClean.Name = "btnClean"
         Me.btnClean.Size = New System.Drawing.Size(58, 58)
         Me.btnClean.TabIndex = 19
@@ -278,7 +293,7 @@ Partial Class Form_calculadora
         Me.pnlTeclado.Controls.Add(Me.btn7)
         Me.pnlTeclado.Controls.Add(Me.btn5)
         Me.pnlTeclado.Controls.Add(Me.btn6)
-        Me.pnlTeclado.Location = New System.Drawing.Point(-2, 92)
+        Me.pnlTeclado.Location = New System.Drawing.Point(-2, 108)
         Me.pnlTeclado.Name = "pnlTeclado"
         Me.pnlTeclado.Size = New System.Drawing.Size(261, 235)
         Me.pnlTeclado.TabIndex = 20
@@ -336,15 +351,15 @@ Partial Class Form_calculadora
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(260, 322)
+        Me.ClientSize = New System.Drawing.Size(260, 344)
         Me.Controls.Add(Me.btnClean)
         Me.Controls.Add(Me.pnlTeclado)
         Me.Controls.Add(Me.pnlDisplay)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.MaximumSize = New System.Drawing.Size(276, 361)
-        Me.MinimumSize = New System.Drawing.Size(276, 361)
+        Me.MaximumSize = New System.Drawing.Size(276, 383)
+        Me.MinimumSize = New System.Drawing.Size(276, 383)
         Me.Name = "Form_calculadora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Calculadora"
@@ -378,4 +393,5 @@ Partial Class Form_calculadora
     Friend WithEvents btn2 As Button
     Friend WithEvents btn1 As Button
     Friend WithEvents btn3 As Button
+    Friend WithEvents tgcMudarTema As RJToggleButton
 End Class

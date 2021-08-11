@@ -28,3 +28,4 @@ C:\Users\Brenda\Documents\Projetos_GitHub\FormCalculadora\MeuPrimeiroProjeto\obj
 C:\Users\Brenda\Documents\Projetos_GitHub\FormCalculadora\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.dll
 C:\Users\Brenda\Documents\Projetos_GitHub\FormCalculadora\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.pdb
 C:\Users\Brenda\Documents\Projetos_GitHub\FormCalculadora\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.genruntimeconfig.cache
+C:\Users\Brenda\Documents\Projetos_GitHub\FormCalculadora\MeuPrimeiroProjeto\obj\Debug\netcoreapp3.1\MeuPrimeiroProjeto.vbproj.AssemblyReference.cache

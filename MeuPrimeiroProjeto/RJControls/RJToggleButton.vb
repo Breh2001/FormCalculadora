@@ -6,13 +6,14 @@ Public Class RJToggleButton
     Inherits CheckBox
 
     Private OnBackColor = Color.White
-    Private OnToggleColor = Color.White
-    Private OffBackColor = Color.FromArgb(255, 25, 25, 25)
-    Private OffToggleColor = Color.FromArgb(255, 25, 25, 25)
+    Private OnToggleColor = Color.FromArgb(255, 25, 25, 25)
+    Private OffBackColor = Color.Black
+    Private OffToggleColor = Color.White
 
     Public Sub RJToogleButton(sender As Object, e As EventArgs)
 
-        Me.MinimumSize = New Size(45, 22)
+        Me.MinimumSize = New Size(35, 20)
+        Me.MaximumSize = New Size(35, 20)
 
         'If chkModoDark.Checked Then
         '    Me.BackColor = BackColorDark
@@ -35,6 +36,10 @@ Public Class RJToggleButton
     End Sub
 
     Private Function _MinimumSize() As Size
+        Throw New NotImplementedException()
+    End Function
+
+    Private Function _MaximumSize() As Size
         Throw New NotImplementedException()
     End Function
 
