@@ -212,6 +212,7 @@ Public Class Form_calculadora
 
     Private Sub Apagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
 
+        If txtDisplay.Text = "" Then Return
         Dim valorAtual = txtDisplay.Text
         'Substring remove a utilima posição
         'E atualiza a txtDisplay
@@ -287,7 +288,7 @@ Public Class Form_calculadora
                 btnMultiplicar.PerformClick()
             Case Keys.Divide
                 btnDividir.PerformClick()
-            Case Keys.Enter
+            Case Keys.Enter, Keys.F18
                 btnCalcular.PerformClick()
             Case Keys.Back
                 btnApagar.PerformClick()
@@ -311,7 +312,7 @@ Public Class Form_calculadora
                 btn9.PerformClick()
             Case Keys.D0, Keys.NumPad0
                 btn0.PerformClick()
-            Case Keys.Decimal
+            Case Keys.Decimal, Keys.Oemcomma
                 btnVirgula.PerformClick()
         End Select
 
