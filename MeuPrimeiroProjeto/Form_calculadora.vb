@@ -98,6 +98,11 @@ Public Class Form_calculadora
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
+        If valorNovo > 28 Then
+            valorNovo = Format(valorNovo, "Scientific")
+            'TextBox1.Text = Format(b, "Scientific")
+            'Format(12345.6789, “Scientific”) = “1,23E+04”
+        End If
         OperacaoMatematica("=")
         TemSinalIgual = True
         'txtDisplay.Text = valorMemoria
@@ -118,71 +123,81 @@ Public Class Form_calculadora
 
     Private Sub Calcular(operador As String, Optional valorNovo As String = "")
 
-        If apagarPressionado Or Not String.IsNullOrEmpty(txtDisplay.Text) Then
-            If operadorPressionado Then
-                valorNovo = txtDisplay.Text
-                operadorPressionado = False
-            End If
-        End If
+        Try
 
-        Concatena = False
-        'TemVirgula = False
 
-        If TemSinalIgual = False Then
-            txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
-        Else
-            txtOperacoes.Text = ""
-            valorNovo = txtDisplay.Text
-            valorMemoria = Nothing
-            txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
-            TemSinalIgual = False
-        End If
-
-        If IsNothing(valorMemoria) Then
-            valorMemoria = valorNovo
-            operadorMemoria = operador
-            Exit Sub
-        End If
-
-        Select Case operadorMemoria
-
-            Case "+"
-                valorMemoria += valorNovo
-
-            Case "-"
-                valorMemoria -= valorNovo
-
-            Case "*"
-                valorMemoria *= valorNovo
-
-            Case "/"
-                If valorNovo = "0" Then
-                    txtOperacoes.Text = ""
-                    txtDisplay.Font = New Font("Arial", 13)
-                    txtDisplay.Text = "Não é possível dividir por zero"
-                    DesabilitarTeclado()
-                    Exit Sub
+            If apagarPressionado Or Not String.IsNullOrEmpty(txtDisplay.Text) Then
+                If operadorPressionado Then
+                    valorNovo = txtDisplay.Text
+                    operadorPressionado = False
                 End If
+            End If
 
-                valorMemoria /= valorNovo
+            Concatena = False
+            'TemVirgula = False
 
-        End Select
+            If TemSinalIgual = False Then
+                txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
+            Else
+                txtOperacoes.Text = ""
+                valorNovo = txtDisplay.Text
+                valorMemoria = Nothing
+                txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
+                TemSinalIgual = False
+            End If
 
-        operadorMemoria = operador
-        operadorPressionado = True
-        apagarPressionado = False
+            If IsNothing(valorMemoria) Then
+                valorMemoria = valorNovo
+                operadorMemoria = operador
+                Exit Sub
+            End If
 
-        txtDisplay.Text = valorMemoria
+            Select Case operadorMemoria
 
-        If operador = "=" Then
+                Case "+"
+                    valorMemoria += valorNovo
 
-            operadorMemoria = String.Empty
+                Case "-"
+                    valorMemoria -= valorNovo
 
-            valorMemoria = Nothing
+                Case "*"
+                    valorMemoria *= valorNovo
 
-            'TemVirgula = txtDisplay.Text.Contains(",")
+                Case "/"
+                    If valorNovo = "0" Then
+                        txtOperacoes.Text = ""
+                        txtDisplay.Font = New Font("Arial", 13)
+                        txtDisplay.Text = "Não é possível dividir por zero"
+                        DesabilitarTeclado()
+                        Exit Sub
+                    End If
 
-        End If
+                    valorMemoria /= valorNovo
+
+            End Select
+
+            operadorMemoria = operador
+            operadorPressionado = True
+            apagarPressionado = False
+
+            txtDisplay.Text = valorMemoria
+
+            If operador = "=" Then
+
+                operadorMemoria = String.Empty
+
+                valorMemoria = Nothing
+
+                'TemVirgula = txtDisplay.Text.Contains(",")
+
+            End If
+        Catch ex As Exception
+
+            limparDisplay()
+            DesabilitarTeclado()
+            txtDisplay.Text = "Erro"
+
+        End Try
 
     End Sub
 
@@ -245,7 +260,7 @@ Public Class Form_calculadora
 
     End Sub
 
-    Private Sub btnClean_Click(sender As Object, e As EventArgs) Handles btnClean.Click
+    Private Sub limparDisplay()
 
         txtDisplay.Font = New Font("MS UI Gothic", 27.75)
         txtOperacoes.Text = ""
@@ -254,6 +269,13 @@ Public Class Form_calculadora
         valorNovo = Nothing
         Concatena = True
         TemVirgula = False
+
+
+    End Sub
+
+    Private Sub btnClean_Click(sender As Object, e As EventArgs) Handles btnClean.Click
+
+        limparDisplay()
         HabilitarTeclado()
 
     End Sub
