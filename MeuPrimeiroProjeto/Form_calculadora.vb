@@ -178,20 +178,22 @@ Public Class Form_calculadora
             operadorPressionado = True
             apagarPressionado = False
 
-            valorNC = valorMemoria
-            MyLen = Len(valorNC)
+            'valorNC = valorMemoria
+            'MyLen = Len(valorNC)
 
-            If MyLen > 28 Then
-                'Print("Valor Memoria = " + Len(valorMemoria))
-                'valorNC = valorMemoria
-                'valorNC.ToString()
-                'txtDisplay.Text = Len(valorNC)
-                'valorMemoria = valorNC.ToString("E")
-                valorMemoria = Format(valorMemoria, "0:0.###E+000")
-                'valorMemoria = valorNC
-                'TextBox1.Text = Format(b, "Scientific")
-                'Format(12345.6789, “Scientific”) = “1,23E+04”
-            End If
+            'If MyLen > 28 Then
+            'Print("Valor Memoria = " + Len(valorMemoria))
+            'valorNC = valorMemoria
+            'valorNC.ToString()
+            'txtDisplay.Text = Len(valorNC)
+            'valorMemoria = valorNC.ToString("E")
+
+            'valorMemoria = Format(valorMemoria, "0:0.###E+000")
+
+            'valorMemoria = valorNC
+            'TextBox1.Text = Format(b, "Scientific")
+            'Format(12345.6789, “Scientific”) = “1,23E+04”
+            'End If
 
             txtDisplay.Text = valorMemoria
 
