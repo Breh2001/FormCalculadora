@@ -2,6 +2,7 @@
 Imports System.Drawing
 Imports System.Drawing.Drawing2D
 Imports System.ComponentModel
+Imports System.Configuration
 
 Public Class Form_calculadora
     Private Const V As String = ""
@@ -18,8 +19,10 @@ Public Class Form_calculadora
     'Dim valor1 As Long
     'Dim valor2 As Long
 
-    Dim valorMemoria As Decimal?
-    Dim valorNovo As Decimal
+    Dim valorMemoria As Double?
+    Dim valorNovo As Double
+    Dim valorNC As String
+    Dim MyLen As String
 
     Dim Concatena As Boolean
     'Se False -> número não fica ao lado do outro | Se True -> número ao lado do outro
@@ -98,11 +101,6 @@ Public Class Form_calculadora
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
-        If valorNovo > 28 Then
-            valorNovo = Format(valorNovo, "Scientific")
-            'TextBox1.Text = Format(b, "Scientific")
-            'Format(12345.6789, “Scientific”) = “1,23E+04”
-        End If
         OperacaoMatematica("=")
         TemSinalIgual = True
         'txtDisplay.Text = valorMemoria
@@ -179,6 +177,21 @@ Public Class Form_calculadora
             operadorMemoria = operador
             operadorPressionado = True
             apagarPressionado = False
+
+            valorNC = valorMemoria
+            MyLen = Len(valorNC)
+
+            If MyLen > 28 Then
+                'Print("Valor Memoria = " + Len(valorMemoria))
+                'valorNC = valorMemoria
+                'valorNC.ToString()
+                'txtDisplay.Text = Len(valorNC)
+                'valorMemoria = valorNC.ToString("E")
+                valorMemoria = Format(valorMemoria, "0:0.###E+000")
+                'valorMemoria = valorNC
+                'TextBox1.Text = Format(b, "Scientific")
+                'Format(12345.6789, “Scientific”) = “1,23E+04”
+            End If
 
             txtDisplay.Text = valorMemoria
 
