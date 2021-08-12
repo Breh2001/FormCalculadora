@@ -92,6 +92,7 @@
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
+        Concatena = False
         OperacaoMatematica("=")
         TemSinalIgual = True
         'txtDisplay.Text = valorMemoria
@@ -169,6 +170,12 @@
             apagarPressionado = False
 
             txtDisplay.Text = valorMemoria
+
+            If txtDisplay.Text = "∞" Then
+
+                DesabilitarTeclado()
+
+            End If
 
             If operador = "=" Then
 
@@ -264,6 +271,8 @@
 
         limparDisplay()
         HabilitarTeclado()
+        txtDisplay.Select()
+        btn0.PerformClick()
 
     End Sub
 
