@@ -1,10 +1,4 @@
-﻿Imports System.Data.OleDb
-Imports System.Drawing
-Imports System.Drawing.Drawing2D
-Imports System.ComponentModel
-Imports System.Configuration
-
-Public Class Form_calculadora
+﻿Public Class Form_calculadora
     Private Const V As String = ""
 
     Private BackColorDark = Color.FromArgb(255, 25, 25, 25)
@@ -15,14 +9,11 @@ Public Class Form_calculadora
     Private OffBackColor = Color.FromArgb(255, 25, 25, 25)
     Private OffToggleColor = Color.FromArgb(255, 25, 25, 25)
 
-
     'Dim valor1 As Long
     'Dim valor2 As Long
 
     Dim valorMemoria As Double?
     Dim valorNovo As Double
-    Dim valorNC As String
-    Dim MyLen As String
 
     Dim Concatena As Boolean
     'Se False -> número não fica ao lado do outro | Se True -> número ao lado do outro
@@ -123,7 +114,6 @@ Public Class Form_calculadora
 
         Try
 
-
             If apagarPressionado Or Not String.IsNullOrEmpty(txtDisplay.Text) Then
                 If operadorPressionado Then
                     valorNovo = txtDisplay.Text
@@ -177,23 +167,6 @@ Public Class Form_calculadora
             operadorMemoria = operador
             operadorPressionado = True
             apagarPressionado = False
-
-            'valorNC = valorMemoria
-            'MyLen = Len(valorNC)
-
-            'If MyLen > 28 Then
-            'Print("Valor Memoria = " + Len(valorMemoria))
-            'valorNC = valorMemoria
-            'valorNC.ToString()
-            'txtDisplay.Text = Len(valorNC)
-            'valorMemoria = valorNC.ToString("E")
-
-            'valorMemoria = Format(valorMemoria, "0:0.###E+000")
-
-            'valorMemoria = valorNC
-            'TextBox1.Text = Format(b, "Scientific")
-            'Format(12345.6789, “Scientific”) = “1,23E+04”
-            'End If
 
             txtDisplay.Text = valorMemoria
 
@@ -284,7 +257,6 @@ Public Class Form_calculadora
         valorNovo = Nothing
         Concatena = True
         TemVirgula = False
-
 
     End Sub
 
