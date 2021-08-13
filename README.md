@@ -1,6 +1,6 @@
 # Calculadora
 
-### Uma calculadora simples
+### Uma calculadora simples :abacus:
 ### Meu primeiro projeto utilizando vb.net
 ###
 
