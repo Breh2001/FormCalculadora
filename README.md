@@ -1,7 +1,7 @@
 # Calculadora
 
-### Uma calculadora simples :abacus:
-### Meu primeiro projeto utilizando vb.net
+### Uma calculadora simples
+### Meu primeiro projeto utilizando vb.net :computer:
 ###
 
 ![print_C_D](https://user-images.githubusercontent.com/74792630/129357026-dec921b2-2fff-4d4d-a257-f1e73a15af33.png)
