@@ -104,6 +104,8 @@
         If String.IsNullOrEmpty(txtDisplay.Text) Then Return
         valorNovo = txtDisplay.Text
         Calcular(operador, valorNovo)
+        btnCalcular.Focus()
+        btnCalcular.Select()
 
         'txtDisplay.SelectAll()
 
@@ -308,6 +310,8 @@
                 btnDividir.PerformClick()
             Case Keys.Enter, Keys.F18
                 btnCalcular.PerformClick()
+            Case Keys.Delete
+                btnClean.PerformClick()
             Case Keys.Back
                 btnApagar.PerformClick()
             Case Keys.D1, Keys.NumPad1

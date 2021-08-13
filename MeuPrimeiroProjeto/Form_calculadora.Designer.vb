@@ -238,6 +238,7 @@ Partial Class Form_calculadora
         '
         Me.txtOperacoes.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
         Me.txtOperacoes.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtOperacoes.Enabled = False
         Me.txtOperacoes.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtOperacoes.ForeColor = System.Drawing.Color.Gainsboro
         Me.txtOperacoes.Location = New System.Drawing.Point(3, 28)
