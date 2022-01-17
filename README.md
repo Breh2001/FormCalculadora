@@ -1,7 +1,7 @@
 # Calculadora
 
 ### Uma calculadora simples
-### Meu primeiro projeto utilizando vb.net :computer:
+### Meu primeiro projeto utilizando VB.Net :computer:
 ###
 ###
 
