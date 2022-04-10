@@ -9,14 +9,10 @@
     Private OffBackColor = Color.FromArgb(255, 25, 25, 25)
     Private OffToggleColor = Color.FromArgb(255, 25, 25, 25)
 
-    'Dim valor1 As Long
-    'Dim valor2 As Long
-
     Dim valorMemoria As Double?
     Dim valorNovo As Double
 
     Dim Concatena As Boolean
-    'Se False -> número não fica ao lado do outro | Se True -> número ao lado do outro
 
     Dim operador As String
     Dim operadorMemoria As String
@@ -25,8 +21,6 @@
     Dim operadorPressionado As Boolean = False
     Dim apagarPressionado As Boolean = False
     Dim TemSinalIgual As Boolean = False
-
-    'Cint () -> converter para inteiro
 
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click, btn2.Click, btn3.Click, btn4.Click, btn5.Click, btn6.Click, btn7.Click, btn8.Click, btn9.Click, btn0.Click
 
@@ -52,42 +46,6 @@
 
 #Region "Set BackgroundImage botões"
 
-    'Private Sub SetBackGroundImageBtn(sender As Object, nomeEvento As String)
-
-    '    Try
-
-    '        Dim nomeImagem = sender.name.ToString().Substring(3) + nomeEvento
-    '        Debug.WriteLine(nomeImagem)
-    '        Dim imagem = My.Resources.ResourceManager.GetObject(nomeImagem)
-    '        If Not IsNothing(imagem) Then
-    '            sender.BackgroundImage = imagem
-    '        End If
-
-    '    Catch ex As Exception
-    '        Return
-    '    End Try
-
-    'End Sub
-
-
-    'Private Sub btnsOperacoes_MouseLeave(sender As Object, e As EventArgs) Handles btnSoma.MouseLeave, btnMultiplicar.MouseLeave, btnDividir.MouseLeave, btnSubtrair.MouseLeave
-
-    '    SetBackGroundImageBtn(sender, nomeEvento:="MouseLeave")
-
-    'End Sub
-
-    'Private Sub btnsOperacoes_MouseHover(sender As Object, e As EventArgs) Handles btnSoma.MouseHover, btnMultiplicar.MouseHover, btnDividir.MouseHover, btnSubtrair.MouseHover, btnSoma.MouseUp, btnMultiplicar.MouseUp, btnDividir.MouseUp, btnSubtrair.MouseUp
-
-    '    SetBackGroundImageBtn(sender, nomeEvento:="MouseHoverUp")
-
-    'End Sub
-
-    'Private Sub btnsOperacoes_MouseDown(sender As Object, e As EventArgs) Handles btnSoma.MouseDown, btnMultiplicar.MouseDown, btnDividir.MouseDown, btnSubtrair.MouseDown
-
-    '    SetBackGroundImageBtn(sender, nomeEvento:="MouseDown")
-
-    'End Sub
-
 #End Region
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
@@ -95,7 +53,6 @@
         Concatena = False
         OperacaoMatematica("=")
         TemSinalIgual = True
-        'txtDisplay.Text = valorMemoria
 
     End Sub
 
@@ -106,10 +63,6 @@
         Calcular(operador, valorNovo)
         btnCalcular.Focus()
         btnCalcular.Select()
-
-        'txtDisplay.SelectAll()
-
-        'txtlblExpressao.Text = valorNovo.ToString + operador
 
     End Sub
 
@@ -125,7 +78,6 @@
             End If
 
             Concatena = False
-            'TemVirgula = False
 
             If TemSinalIgual = False Then
                 txtOperacoes.Text = txtOperacoes.Text + valorNovo + operador
@@ -185,8 +137,6 @@
 
                 valorMemoria = Nothing
 
-                'TemVirgula = txtDisplay.Text.Contains(",")
-
             End If
         Catch ex As Exception
 
@@ -226,8 +176,6 @@
 
         If txtDisplay.Text = "" Then Return
         Dim valorAtual = txtDisplay.Text
-        'Substring remove a utilima posição
-        'E atualiza a txtDisplay
         txtDisplay.Text = valorAtual.Substring(0, valorAtual.Length() - 1)
         TemVirgula = txtDisplay.Text.Contains(",")
         apagarPressionado = True
