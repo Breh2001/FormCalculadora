@@ -15,24 +15,6 @@ Public Class RJToggleButton
         Me.MinimumSize = New Size(35, 20)
         Me.MaximumSize = New Size(35, 20)
 
-        'If chkModoDark.Checked Then
-        '    Me.BackColor = BackColorDark
-        '    pnlTeclado.BackColor = BackColorDark
-        '    txtDisplay.BackColor = BackColorDark
-        '    txtDisplay.ForeColor = BackColorLight
-        '    txtOperacoes.BackColor = BackColorDark
-        '    txtOperacoes.ForeColor = Color.Gainsboro
-        '    pnlDisplay.BackColor = BackColorDark
-        'Else
-        '    Me.BackColor = BackColorLight
-        '    pnlTeclado.BackColor = BackColorLight
-        '    txtDisplay.BackColor = BackColorLight
-        '    txtDisplay.ForeColor = Color.Black
-        '    txtOperacoes.BackColor = BackColorLight
-        '    txtOperacoes.ForeColor = BackColorDark
-        '    pnlDisplay.BackColor = BackColorLight
-        'End If
-
     End Sub
 
     Private Function _MinimumSize() As Size
